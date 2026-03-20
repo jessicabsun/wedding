@@ -7,12 +7,21 @@
   background: #1a1a1a;
   display: flex;
   align-items: stretch;
-  min-height: 70vh;
 }
 
 .storyPhotoWrap {
   position: relative;
   flex: 0 0 50%;
+}
+
+.storyPhotoWrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, #1a1a1a 0%, transparent 30%, transparent 60%, #1a1a1a 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .storyPhoto {
@@ -39,7 +48,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .ssLine {
