@@ -1,0 +1,16 @@
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+}
+
+.loadingText {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--neon-orange);
+  opacity: 0.4;
+  animation: neonPulse 2.8s ease-in-out infinite;
+}

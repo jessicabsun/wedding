@@ -1,0 +1,105 @@
+.cornerSign {
+  position: absolute;
+  top: clamp(2rem, 5vw, 4rem);
+  right: clamp(2rem, 5vw, 4rem);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 0.6s;
+}
+
+.csLine {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  line-height: 0.95;
+  color: var(--neon-yellow);
+  text-shadow:
+    0 0 8px rgba(255,68,16,0.9),
+    0 0 20px rgba(255,68,16,0.5);
+}
+
+.csName {
+  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  letter-spacing: 0.04em;
+}
+
+.csAmp {
+  font-size: clamp(1.6rem, 5vw, 3.6rem);
+  color: var(--neon-orange);
+  text-shadow:
+    0 0 6px rgba(255,68,16,0.8),
+    0 0 16px rgba(255,68,16,0.4);
+}
+
+.csRule {
+  display: block;
+  height: 1px;
+  background: var(--neon-orange);
+  margin: 0.35em auto;
+  opacity: 0.5;
+}
+
+.csRuleTop { width: 100%; }
+.csRuleMid { width: 60%; }
+
+.csSub {
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  letter-spacing: 0.15em;
+  color: var(--neon-orange);
+  text-shadow:
+    0 0 6px rgba(255,68,16,0.7),
+    0 0 14px rgba(255,68,16,0.3);
+}
+
+/* Password field */
+.pwField {
+  margin-top: clamp(1rem, 2.5vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 1.4s;
+}
+
+.pwLabel {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(0.65rem, 1.6vw, 0.85rem);
+  letter-spacing: 0.2em;
+  color: var(--neon-yellow);
+  pointer-events: none;
+  animation: neonPulse 2.8s ease-in-out infinite;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.pwInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,68,16,0.4);
+  outline: none;
+  color: var(--neon-yellow);
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(0.65rem, 1.6vw, 0.85rem);
+  letter-spacing: 0.2em;
+  text-align: center;
+  width: clamp(7rem, 14vw, 11rem);
+  padding: 0.1em 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pwInput::placeholder {
+  color: transparent;
+}
+
+.pwInput:focus {
+  border-bottom-color: rgba(255,68,16,0.9);
+  box-shadow: 0 2px 8px rgba(255,68,16,0.2);
+}
