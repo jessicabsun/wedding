@@ -4,23 +4,24 @@ import styles from "./OurStorySection.module.css";
 export default function OurStorySection() {
   return (
     <section className={styles.ourStorySection}>
-      <div className={styles.storySign}>
-        <span className={`${styles.ssLine} ${styles.ssRule}`} />
-        <span className={styles.ssLine}>Our</span>
-        <span className={styles.ssLine}>Story</span>
-        <span className={`${styles.ssLine} ${styles.ssRule}`} />
+      <div className={styles.storyPhotoWrap}>
+        <Image
+          src="/story.png"
+          alt="Jess and Jake"
+          width={1200}
+          height={1800}
+          className={styles.storyPhoto}
+          sizes="50vw"
+        />
+        <div className={styles.storySign}>
+          <span className={`${styles.ssLine} ${styles.ssRule}`} />
+          <span className={styles.ssLine}>Our</span>
+          <span className={styles.ssLine}>Story</span>
+          <span className={`${styles.ssLine} ${styles.ssRule}`} />
+        </div>
       </div>
 
-      <div className={styles.storyContent}>
-        <div className={styles.storyPhotoWrap}>
-          <Image
-            src="/story.png"
-            alt="Jess and Jake"
-            width={380}
-            height={500}
-            className={styles.storyPhoto}
-          />
-        </div>
+      <div className={styles.storyRight}>
         <p className={styles.storyText}>
           Jake and Jess met under the beautiful blue skies of Berkeley in 2015, two MBA
           students who began dating by the end of the program. A year later, Jess
