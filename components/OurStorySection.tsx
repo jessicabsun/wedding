@@ -6,7 +6,8 @@ export default function OurStorySection() {
     <section className={styles.ourStorySection}>
       <div className={styles.storySign}>
         <span className={`${styles.ssLine} ${styles.ssRule}`} />
-        <span className={styles.ssLine}>Our Story</span>
+        <span className={styles.ssLine}>Our</span>
+        <span className={styles.ssLine}>Story</span>
         <span className={`${styles.ssLine} ${styles.ssRule}`} />
       </div>
 
@@ -21,10 +22,12 @@ export default function OurStorySection() {
           />
         </div>
         <p className={styles.storyText}>
-          {/* Replace with your story */}
-          We met on a Tuesday that neither of us can quite agree on. What followed
-          was years of coffee, arguments about films, and eventually, the realization
-          that we couldn&rsquo;t imagine it any other way.
+          Jake and Jess met under the beautiful blue skies of Berkeley in 2015, two MBA
+          students who began dating by the end of the program. A year later, Jess
+          followed Jake to New York for the adventure of her lifetime. Six years later,
+          after countless parties hosted, miles driven, and pizzas tried, Jake proposed
+          one summer morning in 2024 on a bench in Herbert Von King, their Bed-Stuy
+          neighborhood park.
         </p>
       </div>
     </section>

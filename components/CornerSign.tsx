@@ -32,7 +32,8 @@ export default function CornerSign() {
       <span className={`${styles.csLine} ${styles.csAmp}`}>&amp;</span>
       <span className={`${styles.csLine} ${styles.csName}`}>Jake</span>
       <span className={`${styles.csLine} ${styles.csRule} ${styles.csRuleMid}`} />
-      <span className={`${styles.csLine} ${styles.csSub}`}>October 17 · NYC</span>
+      <span className={`${styles.csLine} ${styles.csSub}`}>10.17.26</span>
+      <span className={`${styles.csLine} ${styles.csSub}`}>NYC</span>
 
       <div className={styles.pwField}>
         {labelVisible && (

@@ -4,8 +4,7 @@ export default function CopySection() {
   return (
     <section className={styles.copySection}>
       <p className={styles.copyText}>
-        Join us for a celebration of love, good food, and even better company.
-        We can&rsquo;t wait to share this day with you in New York City.
+        Beloved friends and family, please join us for our wedding celebration: a night on the town in New York City, Jake&rsquo;s birthplace and our home since 2018.
       </p>
     </section>
   );
