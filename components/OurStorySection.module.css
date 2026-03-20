@@ -76,3 +76,20 @@
   line-height: 1.75;
   letter-spacing: 0.01em;
 }
+
+@media (max-width: 700px) {
+  .storyRight {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+    align-self: stretch;
+  }
+
+  .storyText {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .ssLine {
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+  }
+}

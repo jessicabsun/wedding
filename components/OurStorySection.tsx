@@ -23,12 +23,11 @@ export default function OurStorySection() {
 
       <div className={styles.storyRight}>
         <p className={styles.storyText}>
-          Jake and Jess met under the beautiful blue skies of Berkeley in 2015, two MBA
-          students who began dating by the end of the program. A year later, Jess
-          followed Jake to New York for the adventure of her lifetime. Six years later,
-          after countless parties hosted, miles driven, and pizzas tried, Jake proposed
-          one summer morning in 2024 on a bench in Herbert Von King, their Bed-Stuy
-          neighborhood park.
+          Jake and Jess met under the blue skies of Berkeley in 2015 as MBA students
+          who would begin dating by the end of the program. A year later, Jess followed
+          Jake to New York for the adventure of her lifetime. 6 years later, after
+          countless parties hosted, miles driven, and pizzas tried, Jake proposed one
+          summer morning on a bench in Herbert Von King, their Bed-Stuy neighborhood park.
         </p>
       </div>
     </section>
