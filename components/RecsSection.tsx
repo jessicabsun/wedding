@@ -12,21 +12,21 @@ export default function RecsSection() {
       </div>
 
       <div className={styles.items}>
-        <span className={styles.item}>Apollo Bagels</span>
+        <span className={styles.item}>Scarr&rsquo;s Pizza</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>John&rsquo;s of Bleecker Street</span>
         <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>McSorley&rsquo;s Old Ale House</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Katz&rsquo;s Delicatessen</span>
-        <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Stretch Pizza</span>
         <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Scarr&rsquo;s Pizza</span>
+        <span className={styles.item}>Apollo Bagels</span>
+        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Katz&rsquo;s Delicatessen</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Union Square Cafe</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Grand Central Oyster Bar</span>
+        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>McSorley&rsquo;s Old Ale House</span>
       </div>
 
       <div className={styles.group}>
@@ -36,13 +36,15 @@ export default function RecsSection() {
       </div>
 
       <div className={styles.items}>
-        <span className={styles.item}>Circle Line full island cruise</span>
+        <span className={styles.item}>Ride around all of Manhattan island on the Circle Line</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Walk the Brooklyn Bridge</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Bike the West Side Highway</span>
         <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>MoMA or The Whitney</span>
+        <span className={styles.item}>Go to MoMA or The Whitney</span>
+        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Buy something in SoHo</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Mansions</span>
       </div>
