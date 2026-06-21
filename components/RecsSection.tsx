@@ -36,7 +36,7 @@ export default function RecsSection() {
       </div>
 
       <div className={styles.items}>
-        <span className={styles.item}>Ride around all of Manhattan island on the Circle Line</span>
+        <span className={styles.item}>Cruise around Manhattan island on the Circle Line</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Walk the Brooklyn Bridge</span>
         <span className={styles.dot}>&middot;</span>
