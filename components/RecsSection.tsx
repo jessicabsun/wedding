@@ -3,7 +3,7 @@ import styles from "./RecsSection.module.css";
 export default function RecsSection() {
   return (
     <section className={styles.recs}>
-      <h2 className={styles.heading}>NYC Recs</h2>
+      <h2 className={styles.heading}>City Recommendations</h2>
 
       <div className={styles.group}>
         <hr className={styles.rule} />
