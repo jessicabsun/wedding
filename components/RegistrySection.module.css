@@ -1,5 +1,5 @@
 .registry {
-  background: #1a1a1a;
+  background: linear-gradient(to bottom, #1a1a1a, #131313 6rem, #131313 calc(100% - 6rem), #1a1a1a);
   padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem);
   display: flex;
   flex-direction: column;

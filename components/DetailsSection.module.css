@@ -13,6 +13,7 @@
 }
 
 .cardInner {
+  background: #111;
   border: 1px solid rgba(212, 175, 55, 0.12);
   padding: clamp(3rem, 8vw, 5rem) clamp(2rem, 6vw, 4rem);
   display: flex;

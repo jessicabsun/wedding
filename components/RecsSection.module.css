@@ -1,10 +1,10 @@
 .recs {
-  background: #1a1a1a;
+  background: linear-gradient(to bottom, #1a1a1a, #131313 6rem, #131313 calc(100% - 6rem), #1a1a1a);
   padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .heading {
@@ -20,60 +20,62 @@
   text-align: center;
 }
 
-.mapWrap {
-  width: 100%;
-  max-width: 28rem;
+.group {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-}
-
-.map {
+  gap: clamp(1rem, 3vw, 2rem);
   width: 100%;
-  height: auto;
+  max-width: 30rem;
+  margin-top: 1rem;
 }
 
-.mapLabel {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
-  fill: #f0e8f0;
-  font-weight: 400;
+.rule {
+  flex: 1;
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.3),
+    transparent
+  );
 }
 
-.mapLabelActivity {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
-  fill: #f0e8f0;
-  font-weight: 400;
-}
-
-.legend {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.legendItem {
+.category {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
-  color: #f0e8f0;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--neon-yellow);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.items {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  letter-spacing: 0.08em;
+  gap: 0.3rem 0.6rem;
+  max-width: 36rem;
+  line-height: 2;
 }
 
-.dotFood {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--neon-yellow);
+.item {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: #f0e8f0;
 }
 
-.dotActivity {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--neon-orange);
+.dot {
+  color: var(--neon-yellow);
+  opacity: 0.4;
+  font-size: 1.2rem;
+}
+
+.ornament {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--neon-yellow);
+  opacity: 0.3;
+  margin-top: 1rem;
 }

@@ -5,7 +5,7 @@
 
 .photoSide {
   position: relative;
-  flex: 1;
+  flex: 0 0 50%;
   min-height: 400px;
 }
 
@@ -16,8 +16,8 @@
 }
 
 .rsvp {
-  flex: 1;
-  background: #1a1a1a;
+  flex: 0 0 50%;
+  background: linear-gradient(to bottom, #1a1a1a, #131313 6rem, #131313 calc(100% - 6rem), #1a1a1a);
   padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
   display: flex;
   flex-direction: column;
