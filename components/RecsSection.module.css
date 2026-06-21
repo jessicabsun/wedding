@@ -74,8 +74,21 @@
 }
 
 .ornament {
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  color: var(--neon-yellow);
-  opacity: 0.3;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--neon-orange);
+  text-shadow:
+    0 0 6px rgba(255,68,16,0.7),
+    0 0 14px rgba(255,68,16,0.3);
   margin-top: 1rem;
+  animation: ornamentPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes ornamentPulse {
+  0%, 100% {
+    color: rgba(255, 68, 16, 0.45);
+  }
+  50% {
+    color: rgba(255, 68, 16, 0.7);
+    text-shadow: 0 0 8px rgba(255,68,16,0.6), 0 0 20px rgba(255,68,16,0.3);
+  }
 }

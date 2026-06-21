@@ -49,7 +49,7 @@ export default function RecsSection() {
         <span className={styles.item}>Mansions</span>
       </div>
 
-      <div className={styles.ornament}>&#10045;</div>
+      <div className={styles.ornament}>囍</div>
     </section>
   );
 }
