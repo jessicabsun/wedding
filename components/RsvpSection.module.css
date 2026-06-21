@@ -1,0 +1,267 @@
+.rsvpWrap {
+  display: flex;
+  min-height: 70vh;
+}
+
+.photoSide {
+  position: relative;
+  flex: 1;
+  min-height: 400px;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center 45%;
+  filter: brightness(0.88);
+}
+
+.rsvp {
+  flex: 1;
+  background: #1a1a1a;
+  padding: clamp(3rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.heading {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  color: var(--neon-yellow);
+  text-shadow:
+    0 0 8px rgba(255,68,16,0.9),
+    0 0 20px rgba(255,68,16,0.5);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.deadline {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #f0e8f0;
+  text-align: center;
+  margin-top: -1.5rem;
+}
+
+.lookupWrap,
+.formWrap,
+.doneWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.prompt,
+.greeting {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  color: #f0e8f0;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.greeting {
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  color: var(--neon-yellow);
+}
+
+.inputRow {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.nameFields {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.input {
+  flex: 1;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 245, 160, 0.2);
+  border-radius: 2px;
+  color: #f0e8f0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: var(--neon-yellow);
+}
+
+.input::placeholder {
+  color: rgba(240, 232, 240, 0.35);
+}
+
+.button {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 1px solid var(--neon-yellow);
+  color: var(--neon-yellow);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 2px;
+}
+
+.button:hover {
+  background: var(--neon-yellow);
+  color: #1a1a1a;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.error {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--neon-orange);
+  text-align: center;
+}
+
+.guestNameWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eventBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.eventLabel {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  color: var(--neon-yellow);
+  letter-spacing: 0.03em;
+}
+
+.rsvpRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rsvpName {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #f0e8f0;
+}
+
+.rsvpButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.choiceBtn {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(255, 245, 160, 0.25);
+  color: rgba(240, 232, 240, 0.6);
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 2px;
+}
+
+.choiceBtn:hover {
+  border-color: var(--neon-yellow);
+  color: var(--neon-yellow);
+}
+
+.choiceActive {
+  background: var(--neon-yellow);
+  border-color: var(--neon-yellow);
+  color: #1a1a1a;
+}
+
+.dietaryLabel {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #f0e8f0;
+}
+
+.textarea {
+  width: 100%;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 245, 160, 0.2);
+  border-radius: 2px;
+  color: #f0e8f0;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus {
+  border-color: var(--neon-yellow);
+}
+
+.doneText {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  color: var(--neon-yellow);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.guestbookLink {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--neon-yellow);
+  color: var(--neon-yellow);
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.guestbookLink:hover {
+  background: var(--neon-yellow);
+  color: #1a1a1a;
+}
+
+@media (max-width: 700px) {
+  .rsvpWrap {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .photoSide {
+    min-height: 50vh;
+  }
+}

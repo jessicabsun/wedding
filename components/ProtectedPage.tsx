@@ -2,15 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { COOKIE_NAME, isValidPassword, canAccess, type Page } from "@/lib/permissions";
+import { COOKIE_NAME, isValidPassword } from "@/lib/permissions";
+import Nav from "./Nav";
 import styles from "./ProtectedPage.module.css";
 
-interface Props {
-  page: Page;
-  children: React.ReactNode;
-}
-
-export default function ProtectedPage({ page, children }: Props) {
+export default function ProtectedPage({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const [authorized, setAuthorized] = useState(false);
 
@@ -20,12 +16,12 @@ export default function ProtectedPage({ page, children }: Props) {
       .find((row) => row.startsWith(`${COOKIE_NAME}=`));
     const value = cookie?.split("=")[1] ?? "";
 
-    if (isValidPassword(value) && canAccess(value, page)) {
+    if (isValidPassword(value)) {
       setAuthorized(true);
     } else {
       router.replace("/");
     }
-  }, [page, router]);
+  }, [router]);
 
   if (!authorized) {
     return (
@@ -35,5 +31,10 @@ export default function ProtectedPage({ page, children }: Props) {
     );
   }
 
-  return <>{children}</>;
+  return (
+    <>
+      <Nav />
+      {children}
+    </>
+  );
 }

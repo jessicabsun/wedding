@@ -1,3 +1,8 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -23,3 +28,158 @@
   object-position: center top;
   filter: brightness(0.82);
 }
+
+.title {
+  position: absolute;
+  top: clamp(2rem, 5vw, 4rem);
+  right: clamp(2rem, 5vw, 4rem);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 0.6s;
+}
+
+.csLine {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  line-height: 0.95;
+  color: var(--neon-yellow);
+  text-shadow:
+    0 0 8px rgba(255,68,16,0.9),
+    0 0 20px rgba(255,68,16,0.5);
+}
+
+.csName {
+  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  letter-spacing: 0.04em;
+}
+
+.csAmp {
+  font-size: clamp(1.6rem, 5vw, 3.6rem);
+  color: var(--neon-orange);
+  text-shadow:
+    0 0 6px rgba(255,68,16,0.8),
+    0 0 16px rgba(255,68,16,0.4);
+}
+
+.csRule {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--neon-orange);
+  margin: 0.35em auto;
+  opacity: 0.5;
+}
+
+.csRuleMid {
+  width: 60%;
+}
+
+.csSub {
+  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  letter-spacing: 0.15em;
+  color: var(--neon-orange);
+  text-shadow:
+    0 0 6px rgba(255,68,16,0.7),
+    0 0 14px rgba(255,68,16,0.3);
+}
+
+.copyText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(0.9rem, 2.8vw, 2rem);
+  font-weight: 600;
+  color: #f0e8f0;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 38em;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 0 0 6px rgba(255,68,16,0.6), 0 0 14px rgba(255,68,16,0.3);
+    opacity: 0.45;
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(255,68,16,1), 0 0 28px rgba(255,68,16,0.6), 0 0 50px rgba(255,68,16,0.2);
+    opacity: 1;
+  }
+}
+
+.pwField {
+  margin-top: clamp(1rem, 2.5vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 1.4s;
+}
+
+.pwLabel {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(0.65rem, 1.6vw, 0.85rem);
+  letter-spacing: 0.2em;
+  color: var(--neon-yellow);
+  pointer-events: none;
+  animation: neonPulse 2.8s ease-in-out infinite;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.pwInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,68,16,0.4);
+  outline: none;
+  color: var(--neon-yellow);
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  letter-spacing: 0.2em;
+  text-align: center;
+  width: clamp(9rem, 18vw, 14rem);
+  padding: 0.1em 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pwInput::placeholder {
+  color: var(--neon-yellow);
+  font-style: italic;
+  letter-spacing: 0.2em;
+}
+
+.pwInput:placeholder-shown {
+  animation: textPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% {
+    color: rgba(255, 245, 160, 0.45);
+  }
+  50% {
+    color: rgba(255, 245, 160, 1);
+    text-shadow: 0 0 12px rgba(255,68,16,1), 0 0 28px rgba(255,68,16,0.6);
+  }
+}
+
+.pwInput:focus {
+  border-bottom-color: rgba(255,68,16,0.9);
+  box-shadow: 0 2px 8px rgba(255,68,16,0.2);
+}
+

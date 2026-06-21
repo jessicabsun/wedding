@@ -1,0 +1,79 @@
+.recs {
+  background: #1a1a1a;
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.heading {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  color: var(--neon-yellow);
+  text-shadow:
+    0 0 8px rgba(255,68,16,0.9),
+    0 0 20px rgba(255,68,16,0.5);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.mapWrap {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.map {
+  width: 100%;
+  height: auto;
+}
+
+.mapLabel {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  fill: #f0e8f0;
+  font-weight: 400;
+}
+
+.mapLabelActivity {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  fill: #f0e8f0;
+  font-weight: 400;
+}
+
+.legend {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.legendItem {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: #f0e8f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+.dotFood {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--neon-yellow);
+}
+
+.dotActivity {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--neon-orange);
+}

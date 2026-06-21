@@ -3,7 +3,7 @@ import styles from "./afterparty.module.css";
 
 export default function AfterpartyPage() {
   return (
-    <ProtectedPage page="afterparty">
+    <ProtectedPage>
       <main className={styles.page}>
         <h1 className={styles.heading}>The Afterparty</h1>
         <p className={styles.body}>Details coming soon.</p>

@@ -1,12 +1,19 @@
 import ProtectedPage from "@/components/ProtectedPage";
-import styles from "./dinner.module.css";
+import DetailsSection from "@/components/DetailsSection";
+import RsvpSection from "@/components/RsvpSection";
+import StaysSection from "@/components/StaysSection";
+import OurStorySection from "@/components/OurStorySection";
+import RegistrySection from "@/components/RegistrySection";
 
 export default function DinnerPage() {
   return (
-    <ProtectedPage page="dinner">
-      <main className={styles.page}>
-        <h1 className={styles.heading}>The Dinner</h1>
-        <p className={styles.body}>Details coming soon.</p>
+    <ProtectedPage>
+      <main>
+        <DetailsSection />
+        <RsvpSection />
+        <StaysSection />
+        <OurStorySection />
+        <RegistrySection />
       </main>
     </ProtectedPage>
   );

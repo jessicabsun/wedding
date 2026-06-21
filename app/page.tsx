@@ -1,13 +1,26 @@
 import HeroSection from "@/components/HeroSection";
-import CopySection from "@/components/CopySection";
-import OurStorySection from "@/components/OurStorySection";
+import VenueCard from "@/components/VenueCard";
+import PasswordSection from "@/components/PasswordSection";
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <CopySection />
-      <OurStorySection />
+      <VenueCard
+        src="/gu_banquet.png"
+        alt="Golden Unicorn banquet hall"
+        label="Dinner &middot; Golden Unicorn"
+        objectPosition="center 30%"
+        filter="brightness(0.88) saturate(0.9) contrast(1.05)"
+      />
+      <VenueCard
+        src="/nyc_skyline.png"
+        alt="NYC skyline at night"
+        label="Dancing &middot; Brass"
+        objectPosition="center 70%"
+        filter="brightness(0.9) grayscale(1) contrast(0.9)"
+      />
+      <PasswordSection />
     </main>
   );
 }

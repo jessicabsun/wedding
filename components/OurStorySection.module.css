@@ -1,97 +1,45 @@
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 .ourStorySection {
-  background: #1a1a1a;
   display: flex;
-  align-items: stretch;
+  min-height: 70vh;
 }
 
-.storyPhotoWrap {
+.photoSide {
   position: relative;
-  flex: 0 0 50%;
+  flex: 1;
+  min-height: 400px;
 }
 
-.storyPhotoWrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.3;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 128px;
-  pointer-events: none;
-  z-index: 1;
+.photo {
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.88);
 }
 
-.storyPhotoWrap::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, #1a1a1a 0%, transparent 30%, transparent 60%, #1a1a1a 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.storyPhoto {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: brightness(0.88) grayscale(1);
-}
-
-.storyRight {
+.textSide {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(3rem, 6vw, 6rem);
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(3rem, 6vw, 5rem) clamp(2.5rem, 5vw, 4rem);
+  background: #1a1a1a;
 }
 
-.storySign {
-  position: absolute;
-  top: clamp(2rem, 5vw, 4rem);
-  left: clamp(2rem, 5vw, 4rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  z-index: 2;
-}
-
-.ssLine {
+.heading {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 600;
-  display: block;
-  text-align: center;
-  line-height: 0.95;
+  font-size: clamp(2.5rem, 6vw, 5rem);
   color: var(--neon-yellow);
-  font-size: clamp(2.6rem, 4.5vw, 6.5rem);
-  letter-spacing: 0.04em;
   text-shadow:
     0 0 8px rgba(255,68,16,0.9),
     0 0 20px rgba(255,68,16,0.5);
-}
-
-.ssRule {
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--neon-orange);
-  margin: 0.35em auto;
-  opacity: 0.5;
-  font-size: 0;
+  letter-spacing: 0.04em;
 }
 
 .storyText {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-style: normal;
-  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
   font-weight: 400;
   color: #f0e8f0;
   line-height: 1.75;
@@ -99,30 +47,16 @@
 }
 
 @media (max-width: 700px) {
-  .storyPhotoWrap {
-    align-self: stretch;
+  .ourStorySection {
+    flex-direction: column;
+    min-height: auto;
   }
 
-  .storyPhoto {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 30% 20%;
+  .photoSide {
+    min-height: 50vh;
   }
 
-  .storyRight {
-    padding: 1.5rem 1rem;
-    gap: 1rem;
-  }
-
-  .storyText {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .ssLine {
-    font-size: clamp(1.4rem, 6vw, 2.2rem);
+  .textSide {
+    padding: clamp(2.5rem, 8vw, 4rem) clamp(1.5rem, 6vw, 3rem);
   }
 }

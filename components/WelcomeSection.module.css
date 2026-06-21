@@ -1,0 +1,17 @@
+.welcome {
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem);
+}
+
+.copy {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2.8vw, 2rem);
+  font-weight: 600;
+  color: #f0e8f0;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 640px;
+}
