@@ -27,6 +27,8 @@ export default function RecsSection() {
         <span className={styles.item}>Grand Central Oyster Bar</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>McSorley&rsquo;s Old Ale House</span>
+        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Paradise Lost</span>
       </div>
 
       <div className={styles.group}>
