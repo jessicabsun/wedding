@@ -19,8 +19,10 @@ const activitySpots = [
   { name: "Mansions", x: 235, y: 90 },
 ];
 
-function labelOffset(name: string): { dx: number; dy: number; anchor: string } {
-  const offsets: Record<string, { dx: number; dy: number; anchor: string }> = {
+type Anchor = "start" | "middle" | "end";
+
+function labelOffset(name: string): { dx: number; dy: number; anchor: Anchor } {
+  const offsets: Record<string, { dx: number; dy: number; anchor: Anchor }> = {
     "Apollo Bagels": { dx: 12, dy: -6, anchor: "start" },
     "John’s of Bleecker": { dx: -12, dy: 4, anchor: "end" },
     "McSorley’s": { dx: 12, dy: 10, anchor: "start" },
