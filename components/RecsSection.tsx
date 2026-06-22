@@ -46,6 +46,8 @@ export default function RecsSection() {
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Walk the Brooklyn Bridge</span>
         <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Get a photo inside the Oculus</span>
+        <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Citi Bike the West Side Highway (use the Lyft app)</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>See some art at MoMA or The Whitney</span>
