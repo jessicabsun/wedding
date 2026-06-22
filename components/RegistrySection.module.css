@@ -27,3 +27,8 @@
   text-align: center;
   line-height: 1.75;
 }
+
+.link {
+  color: var(--neon-yellow);
+  text-decoration: none;
+}
