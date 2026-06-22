@@ -16,17 +16,19 @@ export default function RecsSection() {
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Russ &amp; Daughters</span>
         <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Scarr&rsquo;s Pizza</span>
+        <span className={styles.item}>Katz&rsquo;s Delicatessen</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>John&rsquo;s of Bleecker Street</span>
         <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Stretch Pizza</span>
+        <span className={styles.item}>Scarr&rsquo;s Pizza</span>
         <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Katz&rsquo;s Delicatessen</span>
+        <span className={styles.item}>Stretch Pizza</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Union Square Cafe</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Grand Central Oyster Bar</span>
+        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Caff&egrave; Panna</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>McSorley&rsquo;s Old Ale House</span>
         <span className={styles.dot}>&middot;</span>
@@ -44,7 +46,7 @@ export default function RecsSection() {
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Walk the Brooklyn Bridge</span>
         <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Bike the West Side Highway</span>
+        <span className={styles.item}>Citi Bike the West Side Highway (use the Lyft app)</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>See some art at MoMA or The Whitney</span>
         <span className={styles.dot}>&middot;</span>
@@ -57,24 +59,28 @@ export default function RecsSection() {
         <hr className={styles.rule} />
       </div>
 
-      <div className={styles.items}>
-        <span className={styles.item}>Birdie&rsquo;s</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Domino Park</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Misi</span>
-      </div>
-      <div className={styles.items}>
-        <span className={styles.item}>Fort Greene Park</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Strange Delight</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Saraghina Caff&egrave;</span>
-      </div>
-      <div className={styles.items}>
-        <span className={styles.item}>Lucky Charlie</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Mansions</span>
+      <div className={styles.brooklynRows}>
+        <div className={styles.items}>
+          <span className={styles.item}>Birdie&rsquo;s</span>
+          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Domino Park</span>
+          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Misi</span>
+          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Bernie&rsquo;s</span>
+        </div>
+        <div className={styles.items}>
+          <span className={styles.item}>Fort Greene Park</span>
+          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Strange Delight</span>
+          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Saraghina Caff&egrave;</span>
+        </div>
+        <div className={styles.items}>
+          <span className={styles.item}>Lucky Charlie</span>
+          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Mansions</span>
+        </div>
       </div>
 
       <div className={styles.ornament}>囍</div>

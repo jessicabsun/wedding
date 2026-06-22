@@ -73,6 +73,12 @@
   font-size: 1.2rem;
 }
 
+.brooklynRows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .ornament {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-style: normal;
