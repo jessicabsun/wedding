@@ -22,7 +22,7 @@ export default function ScrollArrow() {
   return (
     <div
       className={styles.arrow}
-      style={{ opacity: visible ? undefined : 0, pointerEvents: visible ? "auto" : "none", transition: "opacity 1.5s ease" }}
+      style={{ animation: visible ? undefined : "none", opacity: visible ? undefined : 0, pointerEvents: visible ? "auto" : "none", transition: "opacity 1.5s ease" }}
     >
       <svg width="14" height="24" viewBox="0 0 14 24" fill="none">
         <path d="M7 2L7 22M7 22L2 17M7 22L12 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
