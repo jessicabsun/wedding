@@ -61,7 +61,7 @@ export default function RecsSection() {
 
       <div className={styles.brooklynRows}>
         <div className={styles.items}>
-          <span className={styles.item}>Birdie&rsquo;s</span>
+          <span className={styles.item}>Birdee</span>
           <span className={styles.dot}>&middot;</span>
           <span className={styles.item}>Domino Park</span>
           <span className={styles.dot}>&middot;</span>
