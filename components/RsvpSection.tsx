@@ -66,7 +66,7 @@ export default function RsvpSection() {
     if (!guest) return;
     setLoading(true);
     try {
-      await fetch("/api/rsvp", {
+      const res = await fetch("/api/rsvp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -93,6 +93,7 @@ export default function RsvpSection() {
           },
         }),
       });
+      if (!res.ok) throw new Error("Server error");
       setStep("done");
     } catch {
       setError("Something went wrong. Please try again.");
@@ -317,7 +318,7 @@ export default function RsvpSection() {
         </div>
       )}
 
-      {step === "done" && (
+      {step === "done" && guest && (
         <div className={styles.doneWrap}>
           {allDeclined ? (
             <p className={styles.doneText}>
@@ -328,6 +329,13 @@ export default function RsvpSection() {
               Thanks! We can&rsquo;t wait to celebrate with you.
             </p>
           )}
+          <div className={styles.confirmation}>
+            <p className={styles.confirmLabel}>Your RSVP:</p>
+            {hasFriday && <p className={styles.confirmLine}>Friday: {guest.name} {fridayG1}{hasPartner ? `, ${partnerDisplay} ${fridayG2}` : ""}</p>}
+            <p className={styles.confirmLine}>Dinner: {guest.name} {dinnerG1}{hasPartner ? `, ${partnerDisplay} ${dinnerG2}` : ""}</p>
+            <p className={styles.confirmLine}>Dancing: {guest.name} {dancingG1}{hasPartner ? `, ${partnerDisplay} ${dancingG2}` : ""}</p>
+            {dietaryNotes && <p className={styles.confirmLine}>Dietary: {dietaryNotes}</p>}
+          </div>
           <a href="/guestbook" className={styles.guestbookLink}>
             Sign the guest book &rarr;
           </a>

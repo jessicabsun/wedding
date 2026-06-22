@@ -92,8 +92,16 @@ export async function lookupGuests(query: string, lastNameQuery?: string): Promi
 export async function submitRsvp(
   guestRow: number,
   responses: Record<string, string>
-) {
+): Promise<{ duplicate: boolean }> {
   const sheets = getSheets();
+
+  const existing = await sheets.spreadsheets.values.get({
+    spreadsheetId: SPREADSHEET_ID,
+    range: "RSVPs!A:B",
+  });
+  const rows = existing.data.values || [];
+  const guestName = responses.guestName || "";
+  const duplicate = rows.some((r) => r[1] === guestName);
 
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
@@ -108,7 +116,7 @@ export async function submitRsvp(
   const extraValues = extraKeys.map((k) => `${k}: ${responses[k]}`);
   const values = [
     timestamp,
-    responses.guestName || "",
+    guestName,
     responses.partnerName || "",
     responses.fridayGuest1 || "",
     responses.fridayGuest2 || "",
@@ -120,14 +128,25 @@ export async function submitRsvp(
     responses.email || "",
     responses.phone || "",
     extraValues.join("; "),
+    duplicate ? "UPDATED" : "",
   ];
 
-  await sheets.spreadsheets.values.update({
-    spreadsheetId: SPREADSHEET_ID,
-    range: `RSVPs!A${nextRow}`,
-    valueInputOption: "RAW",
-    requestBody: { values: [values] },
-  });
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: SPREADSHEET_ID,
+        range: `RSVPs!A${nextRow}`,
+        valueInputOption: "RAW",
+        requestBody: { values: [values] },
+      });
+      return { duplicate };
+    } catch (e) {
+      lastError = e;
+      if (attempt < 2) await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)));
+    }
+  }
+  throw lastError;
 }
 
 export interface GuestbookEntry {

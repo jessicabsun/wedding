@@ -236,6 +236,25 @@
   line-height: 1.6;
 }
 
+.confirmation {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.confirmLabel {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: rgba(240, 232, 240, 0.6);
+  margin-bottom: 0.25rem;
+}
+
+.confirmLine {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: #f0e8f0;
+  line-height: 1.6;
+}
+
 .guestbookLink {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-weight: 600;
