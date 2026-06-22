@@ -14,11 +14,12 @@ interface GuestInfo {
 type RsvpChoice = "yes" | "no" | "";
 
 export default function RsvpSection() {
-  const [step, setStep] = useState<"lookup" | "rsvp" | "done">("lookup");
+  const [step, setStep] = useState<"lookup" | "pick" | "rsvp" | "done">("lookup");
   const [query, setQuery] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [guest, setGuest] = useState<GuestInfo | null>(null);
+  const [matches, setMatches] = useState<GuestInfo[]>([]);
 
   const [fridayG1, setFridayG1] = useState<RsvpChoice>("");
   const [fridayG2, setFridayG2] = useState<RsvpChoice>("");
@@ -43,8 +44,13 @@ export default function RsvpSection() {
       });
       const data = await res.json();
       if (data.found) {
-        setGuest(data);
-        setStep("rsvp");
+        if (data.matches.length === 1) {
+          setGuest(data.matches[0]);
+          setStep("rsvp");
+        } else {
+          setMatches(data.matches);
+          setStep("pick");
+        }
       } else {
         setError("We couldn’t find that name. Please try your full name.");
       }
@@ -126,6 +132,21 @@ export default function RsvpSection() {
             {loading ? "..." : "Find"}
           </button>
           {error && <p className={styles.error}>{error}</p>}
+        </div>
+      )}
+
+      {step === "pick" && (
+        <div className={styles.lookupWrap}>
+          <p className={styles.prompt}>We found a few people with that name. Which one is you?</p>
+          {matches.map((m, i) => (
+            <button
+              key={i}
+              className={styles.button}
+              onClick={() => { setGuest(m); setStep("rsvp"); }}
+            >
+              {m.name}{m.partner && m.partner !== "+1" && m.partner.toLowerCase() !== "guest" ? ` & ${m.partner}` : ""}
+            </button>
+          ))}
         </div>
       )}
 

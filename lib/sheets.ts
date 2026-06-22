@@ -27,6 +27,11 @@ export interface GuestRecord {
 }
 
 export async function lookupGuest(query: string, lastNameQuery?: string): Promise<GuestRecord | null> {
+  const results = await lookupGuests(query, lastNameQuery);
+  return results.length > 0 ? results[0] : null;
+}
+
+export async function lookupGuests(query: string, lastNameQuery?: string): Promise<GuestRecord[]> {
   const sheets = getSheets();
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
@@ -34,11 +39,13 @@ export async function lookupGuest(query: string, lastNameQuery?: string): Promis
   });
 
   const rows = res.data.values;
-  if (!rows) return null;
+  if (!rows) return [];
 
   const q = query.trim().toLowerCase();
   const lq = (lastNameQuery || "").trim().toLowerCase();
   const fullQuery = lq ? `${q} ${lq}` : q;
+
+  const matches: GuestRecord[] = [];
 
   for (let i = 0; i < rows.length; i++) {
     const name = (rows[i][0] || "").trim();
@@ -73,11 +80,11 @@ export async function lookupGuest(query: string, lastNameQuery?: string): Promis
         nicknames.includes(q));
 
     if (nameMatch || partnerMatch) {
-      return { row: i + 2, name, partner, events };
+      matches.push({ row: i + 2, name, partner, events });
     }
   }
 
-  return null;
+  return matches;
 }
 
 export async function submitRsvp(
