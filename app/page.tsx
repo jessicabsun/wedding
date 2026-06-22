@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
 import VenueCard from "@/components/VenueCard";
 import PasswordSection from "@/components/PasswordSection";
 import ScrollArrow from "@/components/ScrollArrow";
+
+export const metadata: Metadata = { title: "Jess & Jake · Welcome" };
 
 export default function Home() {
   return (
