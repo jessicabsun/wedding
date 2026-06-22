@@ -142,7 +142,7 @@ function GuestbookCard({ entry, index }: { entry: Entry; index: number }) {
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
       <div className={styles.cardInner}>
-        <p className={`${styles.cardName} ${visible ? styles.shimmer : ""}`}>{entry.name}</p>
+        <p className={styles.cardName}>{entry.name}</p>
         {meta && <p className={styles.cardMeta}>{meta}</p>}
         <hr className={styles.cardRule} />
         <p className={styles.cardMessage}>&ldquo;{entry.message}&rdquo;</p>
