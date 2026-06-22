@@ -6,13 +6,10 @@ import PhotoBreak from "@/components/PhotoBreak";
 import OurStorySection from "@/components/OurStorySection";
 import RegistrySection from "@/components/RegistrySection";
 import RecsSection from "@/components/RecsSection";
-import ScrollArrow from "@/components/ScrollArrow";
-
 export default function DinnerPage() {
   return (
     <ProtectedPage>
       <main>
-        <ScrollArrow />
         <DetailsSection />
         <RsvpSection />
         <StaysSection />

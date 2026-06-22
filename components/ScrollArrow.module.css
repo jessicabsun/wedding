@@ -15,7 +15,7 @@
   z-index: 50;
   color: var(--neon-yellow);
   animation: neonPulse 2.8s ease-in-out infinite;
-  transition: opacity 3s ease;
+  transition: opacity 5s ease;
 }
 
 @media (max-width: 700px) {
