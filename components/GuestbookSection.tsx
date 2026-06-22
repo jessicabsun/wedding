@@ -74,20 +74,20 @@ export default function GuestbookSection() {
           <input
             className={styles.input}
             type="text"
-            placeholder="Where are you traveling from?"
+            placeholder="Where will you be traveling from?"
             value={travelingFrom}
             onChange={(e) => setTravelingFrom(e.target.value)}
           />
           <input
             className={styles.input}
             type="text"
-            placeholder="How do you know the couple?"
+            placeholder="How do you know the happy couple?"
             value={howTheyKnow}
             onChange={(e) => setHowTheyKnow(e.target.value)}
           />
           <textarea
             className={styles.textarea}
-            placeholder="Leave a message for the group -- marriage advice welcome!"
+            placeholder="Leave a message for the group — marriage advice welcome!"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={4}
