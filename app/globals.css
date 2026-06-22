@@ -33,6 +33,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
