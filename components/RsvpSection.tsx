@@ -213,7 +213,7 @@ export default function RsvpSection() {
 
           <div className={styles.eventBlock}>
             <label className={styles.dietaryLabel}>
-              Stay in touch (optional)
+              Sign up for updates (optional)
             </label>
             <input
               className={styles.input}
