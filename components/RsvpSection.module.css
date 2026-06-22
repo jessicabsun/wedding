@@ -12,7 +12,7 @@
 .photo {
   object-fit: cover;
   object-position: center center;
-  filter: brightness(0.88);
+  filter: brightness(0.82) saturate(0.8) contrast(1.05);
 }
 
 .rsvp {

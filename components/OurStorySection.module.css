@@ -12,7 +12,7 @@
 .photo {
   object-fit: cover;
   object-position: center center;
-  filter: brightness(0.88);
+  filter: brightness(0.85) saturate(0.85);
 }
 
 .textSide {
