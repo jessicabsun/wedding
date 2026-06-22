@@ -195,17 +195,3 @@
   box-shadow: 0 2px 8px rgba(255,68,16,0.2);
 }
 
-.scrollArrow {
-  position: absolute;
-  bottom: clamp(2rem, 5vw, 4rem);
-  right: clamp(2rem, 5vw, 4rem);
-  z-index: 3;
-  color: var(--neon-yellow);
-  animation: neonPulse 2.8s ease-in-out infinite;
-  transition: opacity 0.4s;
-}
-
-.scrollArrowHidden {
-  opacity: 0;
-  pointer-events: none;
-}

@@ -2,21 +2,11 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { isValidPassword, getAccessiblePages, COOKIE_NAME } from "@/lib/permissions";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
   const router = useRouter();
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 100);
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key !== "Enter") return;
@@ -62,11 +52,6 @@ export default function HeroSection() {
       <p className={styles.copyText}>
         Beloved friends and family, please join us for our wedding celebration &mdash; a night out in New York City, Jake&rsquo;s birthplace and our home since 2018.
       </p>
-      <div className={`${styles.scrollArrow} ${scrolled ? styles.scrollArrowHidden : ""}`}>
-        <svg width="14" height="24" viewBox="0 0 14 24" fill="none">
-          <path d="M7 2L7 22M7 22L2 17M7 22L12 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
     </section>
   );
 }
