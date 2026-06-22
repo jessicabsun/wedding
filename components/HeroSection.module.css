@@ -36,7 +36,7 @@
 .title {
   position: absolute;
   top: clamp(2rem, 5vw, 4rem);
-  right: clamp(-1rem, 1vw, 4rem);
+  right: clamp(2rem, 5vw, 4rem);
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -115,6 +115,10 @@
 }
 
 @media (max-width: 700px) {
+  .title {
+    right: 0.5rem;
+  }
+
   .copyText {
     position: relative;
     background: #1a1a1a;
