@@ -59,7 +59,7 @@ export default function GuestbookSection() {
     <section id="guestbook" className={styles.guestbook}>
       <h2 className={styles.heading}>Guest Book</h2>
       <p className={styles.subtitle}>
-        Say hello and let everyone know who you are &mdash; your entry will be posted below.
+        Say hello and let everyone know who you are &mdash; your entry will be posted&nbsp;below.
       </p>
 
       {!submitted ? (
