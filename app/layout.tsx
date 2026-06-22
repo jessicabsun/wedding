@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Josefin_Sans, Bebas_Neue, Unbounded } from "next/font/google";
 import "./globals.css";
 import GrainOverlay from "@/components/GrainOverlay";
@@ -27,6 +27,10 @@ const unbounded = Unbounded({
   subsets: ["latin"],
   weight: ["700", "900"],
 });
+
+export const viewport: Viewport = {
+  themeColor: "#1a1a1a",
+};
 
 export const metadata: Metadata = {
   title: "Jess & Jake",
