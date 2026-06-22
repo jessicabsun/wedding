@@ -117,6 +117,7 @@ export async function submitRsvp(
 }
 
 export interface GuestbookEntry {
+  row: number;
   name: string;
   travelingFrom: string;
   howTheyKnow: string;
@@ -134,13 +135,60 @@ export async function getGuestbookEntries(): Promise<GuestbookEntry[]> {
   const rows = res.data.values;
   if (!rows) return [];
 
-  return rows.map((row) => ({
+  return rows.map((row, i) => ({
+    row: i + 1,
     timestamp: row[0] || "",
     name: row[1] || "",
     travelingFrom: row[2] || "",
     howTheyKnow: row[3] || "",
     message: row[4] || "",
   })).reverse();
+}
+
+export async function deleteGuestbookEntry(rowIndex: number) {
+  const sheets = getSheets();
+
+  const spreadsheet = await sheets.spreadsheets.get({
+    spreadsheetId: SPREADSHEET_ID,
+  });
+
+  const guestbookSheet = spreadsheet.data.sheets?.find(
+    (s) => s.properties?.title === "Guestbook"
+  );
+  const sheetId = guestbookSheet?.properties?.sheetId ?? 0;
+
+  await sheets.spreadsheets.batchUpdate({
+    spreadsheetId: SPREADSHEET_ID,
+    requestBody: {
+      requests: [
+        {
+          deleteDimension: {
+            range: {
+              sheetId,
+              dimension: "ROWS",
+              startIndex: rowIndex,
+              endIndex: rowIndex + 1,
+            },
+          },
+        },
+      ],
+    },
+  });
+}
+
+export async function updateGuestbookEntry(
+  rowIndex: number,
+  entry: { name: string; travelingFrom: string; howTheyKnow: string; message: string }
+) {
+  const sheets = getSheets();
+  await sheets.spreadsheets.values.update({
+    spreadsheetId: SPREADSHEET_ID,
+    range: `Guestbook!B${rowIndex + 1}:E${rowIndex + 1}`,
+    valueInputOption: "RAW",
+    requestBody: {
+      values: [[entry.name, entry.travelingFrom, entry.howTheyKnow, entry.message]],
+    },
+  });
 }
 
 export async function submitGuestbookEntry(entry: {
