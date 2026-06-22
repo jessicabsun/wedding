@@ -40,7 +40,7 @@
 
 .deadline {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   color: #f0e8f0;
   text-align: center;
   margin-top: -1.5rem;
