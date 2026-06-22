@@ -5,7 +5,7 @@ import ScrollArrow from "@/components/ScrollArrow";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ background: "#1a1a1a" }}>
       <ScrollArrow />
       <HeroSection />
       <VenueCard
