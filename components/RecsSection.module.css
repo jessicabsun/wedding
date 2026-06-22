@@ -82,8 +82,7 @@
 
 .mapLink a {
   color: var(--neon-yellow);
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
+  text-decoration: none;
 }
 
 .brooklynRows {
