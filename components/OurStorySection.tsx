@@ -24,7 +24,7 @@ export default function OurStorySection() {
           Six years, countless parties
           hosted, miles driven, and pizzas tried later, Jake proposed one late summer morning
           on a bench in Herbert Von King, their Bed-Stuy neighborhood park. Now, they
-          can&rsquo;t wait to make things official and gather with everyone they love in one room.
+          can&rsquo;t wait to make things official and gather everyone they love in one room.
         </p>
       </div>
     </section>
