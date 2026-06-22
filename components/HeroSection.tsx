@@ -63,8 +63,8 @@ export default function HeroSection() {
         Beloved friends and family, please join us for our wedding celebration &mdash; a night out in New York City, Jake&rsquo;s birthplace and our home since 2018.
       </p>
       <div className={`${styles.scrollArrow} ${scrolled ? styles.scrollArrowHidden : ""}`}>
-        <svg width="24" height="14" viewBox="0 0 24 14" fill="none">
-          <path d="M2 2L12 12L22 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <svg width="14" height="24" viewBox="0 0 14 24" fill="none">
+          <path d="M7 2L7 22M7 22L2 17M7 22L12 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
     </section>

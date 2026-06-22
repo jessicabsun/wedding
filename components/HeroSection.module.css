@@ -195,19 +195,13 @@
   box-shadow: 0 2px 8px rgba(255,68,16,0.2);
 }
 
-@keyframes bobDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
-}
-
 .scrollArrow {
   position: absolute;
-  bottom: clamp(0.5rem, 2vw, 1.5rem);
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: clamp(2rem, 5vw, 4rem);
+  right: clamp(2rem, 5vw, 4rem);
   z-index: 3;
-  opacity: 0.5;
-  animation: bobDown 2s ease-in-out infinite;
+  color: var(--neon-yellow);
+  animation: neonPulse 2.8s ease-in-out infinite;
   transition: opacity 0.4s;
 }
 
