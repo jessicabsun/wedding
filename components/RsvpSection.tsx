@@ -325,7 +325,7 @@ export default function RsvpSection() {
             </p>
           ) : (
             <p className={styles.doneText}>
-              Thank you! We can&rsquo;t wait to celebrate with you.
+              Thanks! We can&rsquo;t wait to celebrate with you.
             </p>
           )}
           <a href="/guestbook" className={styles.guestbookLink}>
