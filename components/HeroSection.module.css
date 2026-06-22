@@ -11,6 +11,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 700px) {
+  .hero {
+    aspect-ratio: 2 / 3;
+  }
+}
+
 .hero::after {
   content: '';
   position: absolute;
@@ -70,7 +76,7 @@
 
 .csRule {
   display: block;
-  width: 100%;
+  width: 80%;
   height: 1px;
   background: var(--neon-orange);
   margin: 0.35em auto;
@@ -181,5 +187,26 @@
 .pwInput:focus {
   border-bottom-color: rgba(255,68,16,0.9);
   box-shadow: 0 2px 8px rgba(255,68,16,0.2);
+}
+
+@keyframes bobDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.scrollArrow {
+  position: absolute;
+  bottom: clamp(0.5rem, 2vw, 1.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  opacity: 0.5;
+  animation: bobDown 2s ease-in-out infinite;
+  transition: opacity 0.4s;
+}
+
+.scrollArrowHidden {
+  opacity: 0;
+  pointer-events: none;
 }
 

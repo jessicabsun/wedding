@@ -254,10 +254,10 @@ export default function RsvpSection() {
             </p>
           )}
           <a href="/guestbook" className={styles.guestbookLink}>
-            Sign the Guest Book &rarr;
+            Sign the guest book &rarr;
           </a>
           <a href="/photos" className={styles.guestbookLink}>
-            Share Photos &rarr;
+            Share photos &rarr;
           </a>
         </div>
       )}
