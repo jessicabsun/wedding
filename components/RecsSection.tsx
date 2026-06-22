@@ -3,7 +3,7 @@ import styles from "./RecsSection.module.css";
 export default function RecsSection() {
   return (
     <section className={styles.recs}>
-      <h2 className={styles.heading}>City Recommendations</h2>
+      <h2 className={styles.heading}>City Recs</h2>
 
       <div className={styles.group}>
         <hr className={styles.rule} />
@@ -47,6 +47,22 @@ export default function RecsSection() {
         <span className={styles.item}>Go to MoMA or The Whitney</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Buy something in SoHo</span>
+      </div>
+
+      <div className={styles.group}>
+        <hr className={styles.rule} />
+        <h3 className={styles.category}>Brooklyn</h3>
+        <hr className={styles.rule} />
+      </div>
+
+      <div className={styles.items}>
+        <span className={styles.item}>Lucky Charlie</span>
+        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Domino Park</span>
+        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Bernie&rsquo;s</span>
+        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Fort Greene Park</span>
         <span className={styles.dot}>&middot;</span>
         <span className={styles.item}>Mansions</span>
       </div>
