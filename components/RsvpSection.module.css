@@ -11,7 +11,7 @@
 
 .photo {
   object-fit: cover;
-  object-position: center 45%;
+  object-position: center center;
   filter: brightness(0.88);
 }
 
