@@ -41,7 +41,7 @@ export default function PhotosSection() {
     <section className={styles.photos}>
       <h2 className={styles.heading}>Photos</h2>
       <p className={styles.subtitle}>
-        Share your favorite photos of us, from us, with us &mdash; old or new.
+        Share your favorite photos of or with us from over the years and we&rsquo;ll put our favorites up here. Feel free to share one, two, or 20 &mdash; of one of us or both of us.
       </p>
 
       <div className={styles.formWrap}>

@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ink);
+  background: #1a1a1a;
 }
 
 .loadingText {

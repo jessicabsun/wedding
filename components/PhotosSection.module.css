@@ -1,5 +1,6 @@
 .photos {
   background: #1a1a1a;
+  min-height: 100vh;
   padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem);
   display: flex;
   flex-direction: column;
