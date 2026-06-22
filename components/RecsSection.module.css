@@ -61,11 +61,16 @@
   line-height: 2;
 }
 
+.dot {
+  display: none;
+}
+
 .item {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   color: #f0e8f0;
 }
+
 
 .dot {
   color: var(--neon-yellow);
