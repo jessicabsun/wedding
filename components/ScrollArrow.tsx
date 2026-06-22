@@ -7,7 +7,7 @@ export default function ScrollArrow() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const rsvp = document.querySelector("section[class*='rsvpWrap']");
+    const rsvp = document.querySelector("[data-scroll-hide]");
     if (!rsvp) return;
 
     const observer = new IntersectionObserver(

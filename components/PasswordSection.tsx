@@ -19,7 +19,7 @@ export default function PasswordSection() {
   }
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-scroll-hide>
       <Image
         src="/brass_bar.jpg"
         alt=""

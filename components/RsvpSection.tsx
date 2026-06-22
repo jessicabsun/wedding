@@ -93,7 +93,7 @@ export default function RsvpSection() {
   const partnerDisplay = isPlusOne ? (guestName || "Guest") : (guest?.partner || "");
 
   return (
-    <section className={styles.rsvpWrap}>
+    <section className={styles.rsvpWrap} data-scroll-hide>
       <div className={styles.photoSide}>
         <Image
           src="/rsvp-photo.jpeg"

@@ -1,10 +1,12 @@
 import HeroSection from "@/components/HeroSection";
 import VenueCard from "@/components/VenueCard";
 import PasswordSection from "@/components/PasswordSection";
+import ScrollArrow from "@/components/ScrollArrow";
 
 export default function Home() {
   return (
     <main>
+      <ScrollArrow />
       <HeroSection />
       <VenueCard
         src="/gu_banquet.png"
