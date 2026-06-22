@@ -105,6 +105,23 @@ export default function RsvpSection() {
   }
 
   const extras = guest?.extraGuests || [];
+
+  function formatNames(names: string[]) {
+    if (names.length <= 1) return names[0] || "";
+    const parsed = names.map((n) => {
+      const parts = n.trim().split(" ");
+      return { first: parts.slice(0, -1).join(" "), last: parts[parts.length - 1] };
+    });
+    const allSameLast = parsed.every((p) => p.last === parsed[0].last);
+    if (allSameLast && parsed[0].last) {
+      const firsts = parsed.map((p) => p.first);
+      const lastTwo = firsts.splice(-2);
+      const joined = [...firsts, lastTwo.join(" & ")].join(", ");
+      return `${joined} ${parsed[0].last}`;
+    }
+    const lastTwo = names.splice(-2);
+    return [...names, lastTwo.join(" & ")].join(", ");
+  }
   const allChoices = [fridayG1, fridayG2, dinnerG1, dinnerG2, dancingG1, dancingG2, ...Object.values(extraChoices)].filter(c => c !== "");
   const allDeclined = allChoices.length > 0 && allChoices.every(c => c === "no");
   const hasFriday = guest?.events.includes("friday");
@@ -158,7 +175,7 @@ export default function RsvpSection() {
               className={styles.button}
               onClick={() => { setGuest(m); setStep("rsvp"); }}
             >
-              {m.name}{m.partner && m.partner !== "+1" && m.partner.toLowerCase() !== "guest" ? ` & ${m.partner}` : ""}
+              {formatNames([m.name, ...(m.partner && m.partner !== "+1" && m.partner.toLowerCase() !== "guest" ? [m.partner] : []), ...(m.extraGuests || [])])}
             </button>
           ))}
         </div>
@@ -167,9 +184,7 @@ export default function RsvpSection() {
       {step === "rsvp" && guest && (
         <div className={styles.formWrap}>
           <p className={styles.greeting}>
-            Welcome, {guest.name}
-            {hasPartner ? `, ${partnerDisplay}` : ""}
-            {extras.length > 0 ? `, ${extras.join(", ")}` : ""}!
+            Welcome, {formatNames([guest.name, ...(hasPartner ? [partnerDisplay] : []), ...extras])}!
           </p>
 
           {isPlusOne && (
