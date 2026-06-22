@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Josefin_Sans, Bebas_Neue, Unbounded } from "next/font/google";
+import { Cormorant_Garamond, Josefin_Sans, Bebas_Neue, Unbounded, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 import GrainOverlay from "@/components/GrainOverlay";
 
@@ -28,6 +28,12 @@ const unbounded = Unbounded({
   weight: ["700", "900"],
 });
 
+const pinyon = Pinyon_Script({
+  variable: "--font-pinyon",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const viewport: Viewport = {
   themeColor: "#1a1a1a",
 };
@@ -45,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${josefin.variable} ${bebas.variable} ${unbounded.variable}`}
+      className={`${cormorant.variable} ${josefin.variable} ${bebas.variable} ${unbounded.variable} ${pinyon.variable}`}
     >
       <body>
         <GrainOverlay />

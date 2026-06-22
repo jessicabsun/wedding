@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./GuestbookSection.module.css";
 
 interface Entry {
@@ -107,21 +107,44 @@ export default function GuestbookSection() {
       {entries.length > 0 && (
         <div className={styles.entries}>
           {entries.map((entry, i) => (
-            <div key={i} className={styles.entry}>
-              <p className={styles.entryMessage}>&ldquo;{entry.message}&rdquo;</p>
-              <p className={styles.entryMeta}>
-                <span className={styles.entryName}>{entry.name}</span>
-                {entry.travelingFrom && (
-                  <span className={styles.entryDetail}> &middot; from {entry.travelingFrom}</span>
-                )}
-                {entry.howTheyKnow && (
-                  <span className={styles.entryDetail}> &middot; {entry.howTheyKnow}</span>
-                )}
-              </p>
-            </div>
+            <GuestbookCard key={i} entry={entry} index={i} />
           ))}
         </div>
       )}
     </section>
+  );
+}
+
+function GuestbookCard({ entry, index }: { entry: Entry; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const meta = [
+    entry.travelingFrom ? `from ${entry.travelingFrom}` : "",
+    entry.howTheyKnow || "",
+  ].filter(Boolean).join(" · ");
+
+  return (
+    <div
+      ref={ref}
+      className={`${styles.card} ${visible ? styles.cardVisible : ""}`}
+      style={{ transitionDelay: `${index * 0.1}s` }}
+    >
+      <div className={styles.cardGrain} />
+      <p className={`${styles.cardName} ${visible ? styles.shimmer : ""}`}>{entry.name}</p>
+      {meta && <p className={styles.cardMeta}>{meta}</p>}
+      <p className={styles.cardMessage}>&ldquo;{entry.message}&rdquo;</p>
+    </div>
   );
 }
