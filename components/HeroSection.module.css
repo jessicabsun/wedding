@@ -16,6 +16,10 @@
     flex-direction: column;
   }
 
+  .heroPhoto {
+    object-position: 35% top;
+  }
+
   .copyText {
     position: relative;
     background: #1a1a1a;
