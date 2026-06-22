@@ -89,7 +89,7 @@ export default function RsvpSection() {
   const allDeclined = allChoices.length > 0 && allChoices.every(c => c === "no");
   const hasFriday = guest?.events.includes("friday");
   const hasPartner = !!guest?.partner;
-  const isPlusOne = guest?.partner === "+1";
+  const isPlusOne = guest?.partner === "+1" || guest?.partner?.toLowerCase() === "guest";
   const partnerDisplay = isPlusOne ? (guestName || "Guest") : (guest?.partner || "");
 
   return (
