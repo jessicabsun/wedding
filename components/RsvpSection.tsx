@@ -16,7 +16,6 @@ type RsvpChoice = "yes" | "no" | "";
 export default function RsvpSection() {
   const [step, setStep] = useState<"lookup" | "rsvp" | "done">("lookup");
   const [query, setQuery] = useState("");
-  const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [guest, setGuest] = useState<GuestInfo | null>(null);
@@ -40,7 +39,7 @@ export default function RsvpSection() {
       const res = await fetch("/api/guest-lookup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: query.trim(), lastName: lastName.trim() }),
+        body: JSON.stringify({ name: query.trim() }),
       });
       const data = await res.json();
       if (data.found) {
@@ -111,24 +110,14 @@ export default function RsvpSection() {
       {step === "lookup" && (
         <div className={styles.lookupWrap}>
           <p className={styles.prompt}>Enter your name to find your invitation.</p>
-          <div className={styles.nameFields}>
-            <input
-              className={styles.input}
-              type="text"
-              placeholder="First name"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleLookup()}
-            />
-            <input
-              className={styles.input}
-              type="text"
-              placeholder="Last name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleLookup()}
-            />
-          </div>
+          <input
+            className={styles.input}
+            type="text"
+            placeholder="Your name"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleLookup()}
+          />
           <button
             className={styles.button}
             onClick={handleLookup}
