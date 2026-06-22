@@ -9,6 +9,7 @@ interface GuestInfo {
   name: string;
   partner: string;
   events: string[];
+  extraGuests?: string[];
 }
 
 type RsvpChoice = "yes" | "no" | "";
@@ -28,6 +29,7 @@ export default function RsvpSection() {
   const [dancingG1, setDancingG1] = useState<RsvpChoice>("");
   const [dancingG2, setDancingG2] = useState<RsvpChoice>("");
   const [guestName, setGuestName] = useState("");
+  const [extraChoices, setExtraChoices] = useState<Record<string, RsvpChoice>>({});
   const [dietaryNotes, setDietaryNotes] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -81,6 +83,13 @@ export default function RsvpSection() {
             dietaryNotes,
             email,
             phone,
+            ...Object.fromEntries(
+              extras.flatMap((ex) => [
+                [`friday-${ex}`, extraChoices[`friday-${ex}`] || ""],
+                [`dinner-${ex}`, extraChoices[`dinner-${ex}`] || ""],
+                [`dancing-${ex}`, extraChoices[`dancing-${ex}`] || ""],
+              ])
+            ),
           },
         }),
       });
@@ -91,7 +100,12 @@ export default function RsvpSection() {
     setLoading(false);
   }
 
-  const allChoices = [fridayG1, fridayG2, dinnerG1, dinnerG2, dancingG1, dancingG2].filter(c => c !== "");
+  function setExtra(key: string, val: RsvpChoice) {
+    setExtraChoices((prev) => ({ ...prev, [key]: val }));
+  }
+
+  const extras = guest?.extraGuests || [];
+  const allChoices = [fridayG1, fridayG2, dinnerG1, dinnerG2, dancingG1, dancingG2, ...Object.values(extraChoices)].filter(c => c !== "");
   const allDeclined = allChoices.length > 0 && allChoices.every(c => c === "no");
   const hasFriday = guest?.events.includes("friday");
   const hasPartner = !!guest?.partner;
@@ -154,7 +168,8 @@ export default function RsvpSection() {
         <div className={styles.formWrap}>
           <p className={styles.greeting}>
             Welcome, {guest.name}
-            {hasPartner ? ` & ${partnerDisplay}` : ""}!
+            {hasPartner ? `, ${partnerDisplay}` : ""}
+            {extras.length > 0 ? `, ${extras.join(", ")}` : ""}!
           </p>
 
           {isPlusOne && (
@@ -185,6 +200,14 @@ export default function RsvpSection() {
                   onChange={setFridayG2}
                 />
               )}
+              {extras.map((ex) => (
+                <RsvpRow
+                  key={`friday-${ex}`}
+                  label={ex}
+                  value={extraChoices[`friday-${ex}`] || ""}
+                  onChange={(v) => setExtra(`friday-${ex}`, v)}
+                />
+              ))}
             </div>
           )}
 
@@ -197,11 +220,19 @@ export default function RsvpSection() {
             />
             {hasPartner && (
               <RsvpRow
-                label={guest.partner}
+                label={partnerDisplay}
                 value={dinnerG2}
                 onChange={setDinnerG2}
               />
             )}
+            {extras.map((ex) => (
+              <RsvpRow
+                key={`dinner-${ex}`}
+                label={ex}
+                value={extraChoices[`dinner-${ex}`] || ""}
+                onChange={(v) => setExtra(`dinner-${ex}`, v)}
+              />
+            ))}
           </div>
 
           <div className={styles.eventBlock}>
@@ -213,11 +244,19 @@ export default function RsvpSection() {
             />
             {hasPartner && (
               <RsvpRow
-                label={guest.partner}
+                label={partnerDisplay}
                 value={dancingG2}
                 onChange={setDancingG2}
               />
             )}
+            {extras.map((ex) => (
+              <RsvpRow
+                key={`dancing-${ex}`}
+                label={ex}
+                value={extraChoices[`dancing-${ex}`] || ""}
+                onChange={(v) => setExtra(`dancing-${ex}`, v)}
+              />
+            ))}
           </div>
 
           <div className={styles.eventBlock}>

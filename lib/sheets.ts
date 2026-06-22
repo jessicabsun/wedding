@@ -24,6 +24,7 @@ export interface GuestRecord {
   name: string;
   partner: string;
   events: string[];
+  extraGuests: string[];
 }
 
 export async function lookupGuest(query: string, lastNameQuery?: string): Promise<GuestRecord | null> {
@@ -35,7 +36,7 @@ export async function lookupGuests(query: string, lastNameQuery?: string): Promi
   const sheets = getSheets();
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
-    range: "Guests!A2:F",
+    range: "Guests!A2:G",
   });
 
   const rows = res.data.values;
@@ -54,6 +55,7 @@ export async function lookupGuests(query: string, lastNameQuery?: string): Promi
     const dinner = (rows[i][3] || "").trim().toLowerCase();
     const dancing = (rows[i][4] || "").trim().toLowerCase();
     const nicknames = (rows[i][5] || "").split(",").map((n: string) => n.trim().toLowerCase());
+    const extraGuests = (rows[i][6] || "").split(",").map((n: string) => n.trim()).filter(Boolean);
     const events: string[] = [];
     if (friday === "x") events.push("friday");
     if (dinner === "x") events.push("dinner");
@@ -80,7 +82,7 @@ export async function lookupGuests(query: string, lastNameQuery?: string): Promi
         nicknames.includes(q));
 
     if (nameMatch || partnerMatch) {
-      matches.push({ row: i + 2, name, partner, events });
+      matches.push({ row: i + 2, name, partner, events, extraGuests });
     }
   }
 
@@ -100,6 +102,10 @@ export async function submitRsvp(
   const nextRow = (res.data.values?.length || 0) + 1;
 
   const timestamp = new Date().toISOString();
+  const extraKeys = Object.keys(responses).filter(
+    (k) => k.startsWith("friday-") || k.startsWith("dinner-") || k.startsWith("dancing-")
+  );
+  const extraValues = extraKeys.map((k) => `${k}: ${responses[k]}`);
   const values = [
     timestamp,
     responses.guestName || "",
@@ -113,6 +119,7 @@ export async function submitRsvp(
     responses.dietaryNotes || "",
     responses.email || "",
     responses.phone || "",
+    extraValues.join("; "),
   ];
 
   await sheets.spreadsheets.values.update({

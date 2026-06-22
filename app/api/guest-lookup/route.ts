@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
       name: g.name,
       partner: g.partner,
       events: g.events,
+      extraGuests: g.extraGuests,
     })),
   });
 }
