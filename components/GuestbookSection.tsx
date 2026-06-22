@@ -59,7 +59,7 @@ export default function GuestbookSection() {
     <section id="guestbook" className={styles.guestbook}>
       <h2 className={styles.heading}>Guest Book</h2>
       <p className={styles.subtitle}>
-        Let everyone else who&rsquo;s attending know who you are! Your entry will be posted on this page for all guests to see.
+        Say hello and let everyone know who you are &mdash; your entry will be posted below.
       </p>
 
       {!submitted ? (
@@ -87,7 +87,7 @@ export default function GuestbookSection() {
           />
           <textarea
             className={styles.textarea}
-            placeholder="Leave a message for Jess & Jake"
+            placeholder="Leave a message for the group -- marriage advice welcome!"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={4}
