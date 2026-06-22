@@ -22,7 +22,7 @@ export default function DetailsSection({ includeFriday }: Props) {
 
                 <div className={styles.item}>
                   <span className={styles.venueName}>
-                    Welcome Cocktails &amp; Bites
+                    Welcome Bites &amp; Cocktails
                   </span>
                   <span className={styles.venueDetail}>
                     Hosted by Jake&rsquo;s parents
