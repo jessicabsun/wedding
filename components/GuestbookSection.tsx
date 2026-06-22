@@ -141,10 +141,12 @@ function GuestbookCard({ entry, index }: { entry: Entry; index: number }) {
       className={`${styles.card} ${visible ? styles.cardVisible : ""}`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-      <div className={styles.cardGrain} />
-      <p className={`${styles.cardName} ${visible ? styles.shimmer : ""}`}>{entry.name}</p>
-      {meta && <p className={styles.cardMeta}>{meta}</p>}
-      <p className={styles.cardMessage}>&ldquo;{entry.message}&rdquo;</p>
+      <div className={styles.cardInner}>
+        <p className={`${styles.cardName} ${visible ? styles.shimmer : ""}`}>{entry.name}</p>
+        {meta && <p className={styles.cardMeta}>{meta}</p>}
+        <hr className={styles.cardRule} />
+        <p className={styles.cardMessage}>&ldquo;{entry.message}&rdquo;</p>
+      </div>
     </div>
   );
 }
