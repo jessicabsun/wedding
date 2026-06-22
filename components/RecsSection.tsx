@@ -83,6 +83,14 @@ export default function RecsSection() {
         </div>
       </div>
 
+      <p className={styles.mapLink}>
+        Click{" "}
+        <a href="https://www.google.com/maps/d/u/0/edit?mid=1VV32eMR2yD5Z4tFLc7P2X4zWdifABvI&usp=sharing" target="_blank" rel="noopener noreferrer">
+          here
+        </a>
+        {" "}for locations and more recommendations &mdash; or just ask!
+      </p>
+
       <div className={styles.ornament}>囍</div>
     </section>
   );

@@ -73,6 +73,19 @@
   font-size: 1.2rem;
 }
 
+.mapLink {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: #f0e8f0;
+  text-align: center;
+}
+
+.mapLink a {
+  color: var(--neon-yellow);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 .brooklynRows {
   display: flex;
   flex-direction: column;
