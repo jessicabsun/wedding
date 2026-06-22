@@ -8,7 +8,8 @@ export default function StaysSection() {
       <div className={styles.block}>
         <p className={styles.body}>
           We&rsquo;ve reserved room blocks at The Evelyn Hotel (home to Brass,
-          our dance party venue) and Ace Hotel, both in NoMad. Details to come.
+          our dance party venue), Ace Hotel, both in NoMad, and Residence Inn
+          by Marriott Downtown/World Trade Center. Details to come.
         </p>
       </div>
 
