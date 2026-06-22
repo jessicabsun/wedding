@@ -6,29 +6,16 @@
 .hero {
   position: relative;
   width: 100%;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
   aspect-ratio: 3 / 2;
-  display: flex;
   overflow: hidden;
 }
 
-@media (max-width: 700px) {
-  .hero {
-    flex-direction: column;
-  }
-
-  .heroPhoto {
-    object-position: 35% center;
-  }
-
-  .copyText {
-    position: relative;
-    background: #1a1a1a;
-    padding: 1.5rem clamp(1.5rem, 8vw, 6rem);
-  }
-}
-
-.hero::after {
-  content: '';
+.imageOverlay {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -126,6 +113,15 @@
     0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 700px) {
+  .copyText {
+    position: relative;
+    background: #1a1a1a;
+    padding: 1.5rem clamp(1.5rem, 8vw, 6rem);
+    text-shadow: none;
+  }
+}
+
 @keyframes neonPulse {
   0%, 100% {
     text-shadow: 0 0 6px rgba(255,68,16,0.6), 0 0 14px rgba(255,68,16,0.3);
@@ -219,4 +215,3 @@
   opacity: 0;
   pointer-events: none;
 }
-

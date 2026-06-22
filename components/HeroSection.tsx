@@ -30,14 +30,17 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero}>
-      <Image
-        src="/hero.png"
-        alt="Jess and Jake"
-        fill
-        priority
-        className={styles.heroPhoto}
-        sizes="100vw"
-      />
+      <div className={styles.imageWrap}>
+        <Image
+          src="/hero.png"
+          alt="Jess and Jake"
+          fill
+          priority
+          className={styles.heroPhoto}
+          sizes="100vw"
+        />
+        <div className={styles.imageOverlay} />
+      </div>
       <div className={styles.title}>
         <span className={`${styles.csLine} ${styles.csRule}`} />
         <span className={`${styles.csLine} ${styles.csName}`}>Jess</span>
