@@ -30,7 +30,7 @@ async function sendNotification(responses: Record<string, string>, duplicate: bo
     ? "\n\nExtra guests:\n" + extraKeys.map((k) => `${k}: ${responses[k]}`).join("\n")
     : "";
 
-  await fetch("https://api.resend.com/emails", {
+  const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${apiKey}`,
@@ -43,6 +43,12 @@ async function sendNotification(responses: Record<string, string>, duplicate: bo
       text: lines + extraText,
     }),
   });
+  const resBody = await res.json();
+  if (!res.ok) {
+    console.error("Resend error:", JSON.stringify(resBody));
+  } else {
+    console.log("Resend sent:", resBody.id);
+  }
 }
 
 export async function POST(req: NextRequest) {
