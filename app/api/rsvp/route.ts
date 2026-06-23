@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const { duplicate } = await submitRsvp(guestRow, responses);
-    sendNotification(responses, duplicate).catch(() => {});
+    await sendNotification(responses, duplicate).catch((e) => console.error("Notification failed:", e));
     return NextResponse.json({ success: true, duplicate });
   } catch (e) {
     console.error("RSVP submission failed:", e);
