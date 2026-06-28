@@ -54,7 +54,7 @@ export default function RsvpSection() {
           setStep("pick");
         }
       } else {
-        setError("We couldn’t find that name. Please try your full name.");
+        setError("We couldn’t find that name. Try your full name as it appears on the invitation, or reach out to Jess & Jake directly.");
       }
     } catch {
       setError("Something went wrong. Please try again.");
@@ -62,8 +62,54 @@ export default function RsvpSection() {
     setLoading(false);
   }
 
+  function resetForm() {
+    setStep("lookup");
+    setQuery("");
+    setError("");
+    setGuest(null);
+    setMatches([]);
+    setFridayG1("");
+    setFridayG2("");
+    setDinnerG1("");
+    setDinnerG2("");
+    setDancingG1("");
+    setDancingG2("");
+    setGuestName("");
+    setExtraChoices({});
+    setDietaryNotes("");
+    setEmail("");
+    setPhone("");
+  }
+
+  function validate(): string | null {
+    if (isPlusOne && !guestName.trim()) {
+      return "Please enter your guest's name.";
+    }
+    const required: RsvpChoice[] = [dinnerG1, dancingG1];
+    if (hasPartner) required.push(dinnerG2, dancingG2);
+    if (hasFriday) {
+      required.push(fridayG1);
+      if (hasPartner) required.push(fridayG2);
+    }
+    for (const ex of extras) {
+      required.push(extraChoices[`dinner-${ex}`] || "");
+      required.push(extraChoices[`dancing-${ex}`] || "");
+      if (hasFriday) required.push(extraChoices[`friday-${ex}`] || "");
+    }
+    if (required.some((v) => v === "")) {
+      return "Please accept or decline each event for every guest.";
+    }
+    return null;
+  }
+
   async function handleSubmit() {
     if (!guest) return;
+    setError("");
+    const validationError = validate();
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
     setLoading(true);
     try {
       const res = await fetch("/api/rsvp", {
@@ -179,6 +225,9 @@ export default function RsvpSection() {
               {formatNames([m.name, ...(m.partner && m.partner !== "+1" && m.partner.toLowerCase() !== "guest" ? [m.partner] : []), ...(m.extraGuests || [])])}
             </button>
           ))}
+          <button className={styles.backBtn} onClick={resetForm}>
+            &larr; Start over
+          </button>
         </div>
       )}
 
@@ -315,6 +364,9 @@ export default function RsvpSection() {
             {loading ? "Submitting..." : "Submit RSVP"}
           </button>
           {error && <p className={styles.error}>{error}</p>}
+          <button className={styles.backBtn} onClick={resetForm}>
+            &larr; Start over
+          </button>
         </div>
       )}
 
@@ -331,10 +383,25 @@ export default function RsvpSection() {
           )}
           <div className={styles.confirmation}>
             <p className={styles.confirmLabel}>Your RSVP:</p>
-            {hasFriday && <p className={styles.confirmLine}>Friday: {guest.name} {fridayG1}{hasPartner ? `, ${partnerDisplay} ${fridayG2}` : ""}</p>}
-            <p className={styles.confirmLine}>Dinner: {guest.name} {dinnerG1}{hasPartner ? `, ${partnerDisplay} ${dinnerG2}` : ""}</p>
-            <p className={styles.confirmLine}>Dancing: {guest.name} {dancingG1}{hasPartner ? `, ${partnerDisplay} ${dancingG2}` : ""}</p>
+            {hasFriday && (
+              <p className={styles.confirmLine}>
+                Friday: {guest.name} {fridayG1}
+                {hasPartner ? `, ${partnerDisplay} ${fridayG2}` : ""}
+                {extras.map((ex) => `, ${ex} ${extraChoices[`friday-${ex}`] || ""}`)}
+              </p>
+            )}
+            <p className={styles.confirmLine}>
+              Dinner: {guest.name} {dinnerG1}
+              {hasPartner ? `, ${partnerDisplay} ${dinnerG2}` : ""}
+              {extras.map((ex) => `, ${ex} ${extraChoices[`dinner-${ex}`] || ""}`)}
+            </p>
+            <p className={styles.confirmLine}>
+              Dancing: {guest.name} {dancingG1}
+              {hasPartner ? `, ${partnerDisplay} ${dancingG2}` : ""}
+              {extras.map((ex) => `, ${ex} ${extraChoices[`dancing-${ex}`] || ""}`)}
+            </p>
             {dietaryNotes && <p className={styles.confirmLine}>Dietary: {dietaryNotes}</p>}
+            {email && <p className={styles.confirmLine}>A confirmation has been sent to {email}.</p>}
           </div>
           <a href="/guestbook" className={styles.guestbookLink}>
             Sign the guest book &rarr;

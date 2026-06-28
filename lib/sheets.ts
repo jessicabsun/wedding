@@ -101,13 +101,8 @@ export async function submitRsvp(
   });
   const rows = existing.data.values || [];
   const guestName = responses.guestName || "";
-  const duplicate = rows.some((r) => r[1] === guestName);
-
-  const res = await sheets.spreadsheets.values.get({
-    spreadsheetId: SPREADSHEET_ID,
-    range: "RSVPs!A:A",
-  });
-  const nextRow = (res.data.values?.length || 0) + 1;
+  const duplicateRowIndex = rows.findIndex((r) => r[1] === guestName);
+  const duplicate = duplicateRowIndex !== -1;
 
   const timestamp = new Date().toISOString();
   const extraKeys = Object.keys(responses).filter(
@@ -134,10 +129,11 @@ export async function submitRsvp(
   let lastError: unknown;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      await sheets.spreadsheets.values.update({
+      await sheets.spreadsheets.values.append({
         spreadsheetId: SPREADSHEET_ID,
-        range: `RSVPs!A${nextRow}`,
+        range: "RSVPs!A:A",
         valueInputOption: "RAW",
+        insertDataOption: "INSERT_ROWS",
         requestBody: { values: [values] },
       });
       return { duplicate };

@@ -4,7 +4,7 @@ import VenueCard from "@/components/VenueCard";
 import PasswordSection from "@/components/PasswordSection";
 import ScrollArrow from "@/components/ScrollArrow";
 
-export const metadata: Metadata = { title: "Jess & Jake · Welcome" };
+export const metadata: Metadata = { title: "Jess & Jake · 10.17.26 · NYC" };
 
 export default function Home() {
   return (
