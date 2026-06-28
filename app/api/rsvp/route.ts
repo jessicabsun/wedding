@@ -64,38 +64,6 @@ async function sendNotification(responses: Record<string, string>, duplicate: bo
   }
 }
 
-async function sendConfirmation(responses: Record<string, string>, duplicate: boolean) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const guestEmail = responses.email;
-  if (!apiKey || !guestEmail) return;
-
-  const guestName = responses.guestName?.split(" ")[0] || "there";
-  const summary = buildRsvpSummary(responses);
-
-  const text = duplicate
-    ? `Hi ${guestName},\n\nYour updated RSVP has been received! Here's what we have:\n\n${summary}\n\nIf anything looks off, just RSVP again on the website to update.\n\nCan't wait to celebrate!\nJess & Jake`
-    : `Hi ${guestName},\n\nThanks for RSVPing! Here's what we have:\n\n${summary}\n\nIf you need to make changes, just RSVP again on the website and it'll update automatically.\n\nCan't wait to celebrate!\nJess & Jake`;
-
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: "Jess & Jake <onboarding@resend.dev>",
-      to: guestEmail,
-      subject: duplicate ? "Your updated RSVP" : "We got your RSVP!",
-      text,
-    }),
-  });
-  const resBody = await res.json();
-  if (!res.ok) {
-    console.error("Confirmation email error:", JSON.stringify(resBody));
-  } else {
-    console.log("Confirmation sent:", resBody.id);
-  }
-}
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -107,10 +75,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const { duplicate } = await submitRsvp(guestRow, responses);
-    await Promise.all([
-      sendNotification(responses, duplicate).catch((e) => console.error("Notification failed:", e)),
-      sendConfirmation(responses, duplicate).catch((e) => console.error("Confirmation failed:", e)),
-    ]);
+    await sendNotification(responses, duplicate).catch((e) => console.error("Notification failed:", e));
     return NextResponse.json({ success: true, duplicate });
   } catch (e) {
     console.error("RSVP submission failed:", e);

@@ -410,7 +410,6 @@ export default function RsvpSection() {
               {extras.map((ex) => `, ${ex} ${extraChoices[`dancing-${ex}`] || ""}`)}
             </p>
             {dietaryNotes && <p className={styles.confirmLine}>Dietary: {dietaryNotes}</p>}
-            {email && <p className={styles.confirmLine}>A confirmation has been sent to {email}.</p>}
           </div>
           <a href="/guestbook" className={styles.guestbookLink}>
             Sign the guest book &rarr;
