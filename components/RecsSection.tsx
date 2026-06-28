@@ -12,26 +12,16 @@ export default function RecsSection() {
       </div>
 
       <div className={styles.items}>
-        <span className={styles.item}>Apollo Bagels</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Russ &amp; Daughters</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Katz&rsquo;s Delicatessen</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>John&rsquo;s of Bleecker Street</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Scarr&rsquo;s Pizza</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Stretch Pizza</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Union Square Cafe</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Grand Central Oyster Bar</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Caff&egrave; Panna</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>McSorley&rsquo;s Old Ale House</span>
-        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Apollo Bagels <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Russ &amp; Daughters <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Katz&rsquo;s Delicatessen <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>John&rsquo;s of Bleecker Street <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Scarr&rsquo;s Pizza <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Stretch Pizza <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Union Square Cafe <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Grand Central Oyster Bar <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Caff&egrave; Panna <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>McSorley&rsquo;s Old Ale House <span className={styles.dot}>&middot;</span></span>
         <span className={styles.item}>Paradise Lost</span>
       </div>
 
@@ -42,16 +32,11 @@ export default function RecsSection() {
       </div>
 
       <div className={styles.items}>
-        <span className={styles.item}>Cruise around all of Manhattan on the Circle Line (Pier 83)</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Walk the Brooklyn Bridge</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Get a photo inside the Oculus</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>Citi Bike the West Side Highway (use the Lyft app)</span>
-        <span className={styles.dot}>&middot;</span>
-        <span className={styles.item}>See some art at MoMA or The Whitney</span>
-        <span className={styles.dot}>&middot;</span>
+        <span className={styles.item}>Cruise around all of Manhattan on the Circle Line (Pier 83) <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Walk the Brooklyn Bridge <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Get a photo inside the Oculus <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>Citi Bike the West Side Highway (use the Lyft app) <span className={styles.dot}>&middot;</span></span>
+        <span className={styles.item}>See some art at MoMA or The Whitney <span className={styles.dot}>&middot;</span></span>
         <span className={styles.item}>Buy something in SoHo</span>
       </div>
 
@@ -63,24 +48,18 @@ export default function RecsSection() {
 
       <div className={styles.brooklynRows}>
         <div className={styles.items}>
-          <span className={styles.item}>Birdee</span>
-          <span className={styles.dot}>&middot;</span>
-          <span className={styles.item}>Domino Park</span>
-          <span className={styles.dot}>&middot;</span>
-          <span className={styles.item}>Misi</span>
-          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Birdee <span className={styles.dot}>&middot;</span></span>
+          <span className={styles.item}>Domino Park <span className={styles.dot}>&middot;</span></span>
+          <span className={styles.item}>Misi <span className={styles.dot}>&middot;</span></span>
           <span className={styles.item}>Bernie&rsquo;s</span>
         </div>
         <div className={styles.items}>
-          <span className={styles.item}>Fort Greene Park</span>
-          <span className={styles.dot}>&middot;</span>
-          <span className={styles.item}>Strange Delight</span>
-          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Fort Greene Park <span className={styles.dot}>&middot;</span></span>
+          <span className={styles.item}>Strange Delight <span className={styles.dot}>&middot;</span></span>
           <span className={styles.item}>Saraghina Caff&egrave;</span>
         </div>
         <div className={styles.items}>
-          <span className={styles.item}>Lucky Charlie</span>
-          <span className={styles.dot}>&middot;</span>
+          <span className={styles.item}>Lucky Charlie <span className={styles.dot}>&middot;</span></span>
           <span className={styles.item}>Mansions</span>
         </div>
       </div>

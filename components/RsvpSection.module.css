@@ -12,8 +12,9 @@
 .photo {
   object-fit: cover;
   object-position: center center;
-  filter: brightness(0.82) saturate(0.8) contrast(1.05);
+  filter: brightness(0.85) saturate(0.85) url(#grain-rsvp);
 }
+
 
 .rsvp {
   flex: 0 0 50%;
@@ -296,6 +297,12 @@
   }
 
   .photoSide {
-    min-height: 50vh;
+    min-height: unset;
+    aspect-ratio: 3/4;
+    width: 100%;
+  }
+
+  .photo {
+    object-position: center top;
   }
 }

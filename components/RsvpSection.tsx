@@ -179,6 +179,15 @@ export default function RsvpSection() {
   return (
     <section className={styles.rsvpWrap} data-scroll-hide>
       <div className={styles.photoSide}>
+        <svg width="0" height="0" style={{ position: "absolute" }}>
+          <defs>
+            <filter id="grain-rsvp" x="0%" y="0%" width="100%" height="100%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
+              <feColorMatrix type="saturate" values="0" />
+              <feBlend in="SourceGraphic" mode="multiply" />
+            </filter>
+          </defs>
+        </svg>
         <Image
           src="/rsvp-photo.jpeg"
           alt="Jess and Jake by the East River"

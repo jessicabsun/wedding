@@ -12,8 +12,9 @@
 .photo {
   object-fit: cover;
   object-position: center center;
-  filter: brightness(0.85) saturate(0.85);
+  filter: brightness(0.85) saturate(0.85) url(#grain-story);
 }
+
 
 .textSide {
   flex: 0 0 50%;
@@ -53,7 +54,9 @@
   }
 
   .photoSide {
-    min-height: 50vh;
+    min-height: unset;
+    aspect-ratio: 3/4;
+    width: 100%;
   }
 
   .textSide {
