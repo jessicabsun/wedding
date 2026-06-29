@@ -14,7 +14,7 @@ export default function FridayPage() {
     <ProtectedPage>
       <main>
         <DetailsSection includeFriday />
-        <RsvpSection />
+        <RsvpSection includeFriday />
         <StaysSection />
         <PhotoBreak />
         <RegistrySection />

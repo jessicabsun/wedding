@@ -14,7 +14,7 @@ interface GuestInfo {
 
 type RsvpChoice = "yes" | "no" | "";
 
-export default function RsvpSection() {
+export default function RsvpSection({ includeFriday: pageIncludesFriday }: { includeFriday?: boolean }) {
   const [step, setStep] = useState<"lookup" | "pick" | "rsvp" | "done">("lookup");
   const [query, setQuery] = useState("");
   const [error, setError] = useState("");
@@ -31,6 +31,7 @@ export default function RsvpSection() {
   const [guestName, setGuestName] = useState("");
   const [extraChoices, setExtraChoices] = useState<Record<string, RsvpChoice>>({});
   const [dietaryNotes, setDietaryNotes] = useState("");
+  const [mailingAddress, setMailingAddress] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
@@ -77,6 +78,7 @@ export default function RsvpSection() {
     setGuestName("");
     setExtraChoices({});
     setDietaryNotes("");
+    setMailingAddress("");
     setEmail("");
     setPhone("");
   }
@@ -127,6 +129,7 @@ export default function RsvpSection() {
             dancingGuest1: dancingG1,
             dancingGuest2: dancingG2,
             dietaryNotes,
+            mailingAddress,
             email,
             phone,
             ...Object.fromEntries(
@@ -171,7 +174,7 @@ export default function RsvpSection() {
   }
   const allChoices = [fridayG1, fridayG2, dinnerG1, dinnerG2, dancingG1, dancingG2, ...Object.values(extraChoices)].filter(c => c !== "");
   const allDeclined = allChoices.length > 0 && allChoices.every(c => c === "no");
-  const hasFriday = guest?.events.includes("friday");
+  const hasFriday = pageIncludesFriday || guest?.events.includes("friday");
   const hasPartner = !!guest?.partner;
   const isPlusOne = guest?.partner === "+1" || guest?.partner?.toLowerCase() === "guest";
   const partnerDisplay = isPlusOne ? (guestName || "Guest") : (guest?.partner || "");
@@ -342,6 +345,19 @@ export default function RsvpSection() {
               value={dietaryNotes}
               onChange={(e) => setDietaryNotes(e.target.value)}
               rows={3}
+            />
+          </div>
+
+          <div className={styles.eventBlock}>
+            <label className={styles.dietaryLabel}>
+              Mailing address (for future thank you notes &amp; holiday cards)
+            </label>
+            <textarea
+              className={styles.textarea}
+              value={mailingAddress}
+              onChange={(e) => setMailingAddress(e.target.value)}
+              rows={3}
+              placeholder="Street, City, State, ZIP"
             />
           </div>
 

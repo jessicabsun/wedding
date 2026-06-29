@@ -23,6 +23,7 @@ function buildRsvpSummary(responses: Record<string, string>) {
   }
 
   if (responses.dietaryNotes) lines.push("", `Dietary: ${responses.dietaryNotes}`);
+  if (responses.mailingAddress) lines.push("", `Mailing: ${responses.mailingAddress}`);
 
   return lines.filter((l) => l !== undefined).join("\n");
 }

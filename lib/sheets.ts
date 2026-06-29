@@ -120,6 +120,7 @@ export async function submitRsvp(
     responses.dancingGuest1 || "",
     responses.dancingGuest2 || "",
     responses.dietaryNotes || "",
+    responses.mailingAddress || "",
     responses.email || "",
     responses.phone || "",
     extraValues.join("; "),
