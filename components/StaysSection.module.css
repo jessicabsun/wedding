@@ -20,15 +20,28 @@
   text-align: center;
 }
 
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  width: 100%;
+  max-width: 72rem;
+}
+
 .block {
-  max-width: 34em;
-  text-align: center;
+  text-align: left;
 }
 
 .body {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   font-weight: 400;
   color: #f0e8f0;
   line-height: 1.75;
+}
+
+@media (max-width: 700px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
 }

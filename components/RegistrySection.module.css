@@ -22,10 +22,12 @@
 
 .body {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
   color: #f0e8f0;
   text-align: center;
   line-height: 1.75;
+  max-width: 44rem;
+  width: 100%;
 }
 
 .link {

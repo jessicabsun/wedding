@@ -15,9 +15,9 @@ export default function RegistryPage() {
           <Image
             src="/registry_photo.png"
             alt="Jess and Jake"
-            width={4032}
-            height={3024}
+            fill
             unoptimized
+            sizes="(max-width: 700px) 100vw, 80vw"
             className={styles.photo}
           />
         </div>

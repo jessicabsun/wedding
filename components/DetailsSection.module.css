@@ -40,7 +40,7 @@
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 600;
-  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   color: var(--neon-orange);
   letter-spacing: 0.15em;
   text-shadow:
@@ -96,7 +96,7 @@
 
 .attire {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  font-size: clamp(1rem, 1.6vw, 1.1rem);
   color: #f0e8f0;
   opacity: 0.5;
   letter-spacing: 0.14em;
@@ -124,7 +124,7 @@
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.2rem);
   color: #f0e8f0;
   line-height: 1.6;
 }
@@ -133,7 +133,7 @@
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.2rem);
   color: #f0e8f0;
   opacity: 0.65;
 }

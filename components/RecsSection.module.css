@@ -61,7 +61,7 @@
 .item {
   display: inline;
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-size: clamp(1.25rem, 2vw, 1.4rem);
   color: #f0e8f0;
 }
 
@@ -78,7 +78,7 @@
 
 .mapLink {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-size: clamp(1.25rem, 2vw, 1.4rem);
   color: #f0e8f0;
   text-align: center;
 }

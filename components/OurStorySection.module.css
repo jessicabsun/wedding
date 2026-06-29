@@ -41,7 +41,7 @@
 
 .storyText {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
   font-weight: 400;
   color: #f0e8f0;
   line-height: 1.75;
@@ -58,6 +58,7 @@
     min-height: unset;
     aspect-ratio: 3/4;
     width: 100%;
+    order: -1;
   }
 
   .textSide {

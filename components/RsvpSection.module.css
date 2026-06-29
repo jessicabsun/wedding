@@ -41,7 +41,7 @@
 
 .deadline {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   color: #f0e8f0;
   text-align: center;
   margin-top: -1.5rem;
@@ -61,7 +61,7 @@
 .prompt,
 .greeting {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   color: #f0e8f0;
   text-align: center;
   line-height: 1.6;
@@ -244,14 +244,14 @@
 
 .confirmLabel {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.1rem);
   color: rgba(240, 232, 240, 0.6);
   margin-bottom: 0.25rem;
 }
 
 .confirmLine {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.1rem);
   color: #f0e8f0;
   line-height: 1.6;
 }
