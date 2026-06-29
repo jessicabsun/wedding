@@ -14,15 +14,6 @@ export default function OurStorySection() {
         </defs>
       </svg>
       <section className={styles.ourStorySection}>
-        <div className={styles.photoSide}>
-          <Image
-            src="/ourstory-bg3.jpeg"
-            alt="Jess and Jake"
-            fill
-            sizes="(max-width: 700px) 100vw, 50vw"
-            className={styles.photo}
-          />
-        </div>
         <div className={styles.textSide}>
           <h2 className={styles.heading}>Our Story</h2>
           <p className={styles.storyText}>
@@ -36,6 +27,15 @@ export default function OurStorySection() {
             on a bench in Herbert Von King, their Bed-Stuy neighborhood park. Now, they
             can&rsquo;t wait to make things official and gather everyone they love in one room.
           </p>
+        </div>
+        <div className={styles.photoSide}>
+          <Image
+            src="/ourstory-bg3.jpeg"
+            alt="Jess and Jake"
+            fill
+            sizes="(max-width: 700px) 100vw, 50vw"
+            className={styles.photo}
+          />
         </div>
       </section>
     </>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import styles from "./PhotosSection.module.css";
 
 export default function PhotosSection() {
@@ -78,6 +79,30 @@ export default function PhotosSection() {
           {uploading ? "Uploading..." : "Upload"}
         </button>
         {message && <p className={styles.success}>{message}</p>}
+      </div>
+
+      <div className={styles.curatedGrid}>
+        <div className={styles.curatedPhoto}>
+          <Image
+            src="/divider_left.png"
+            alt="Jess and Jake"
+            fill
+            sizes="(max-width: 700px) 50vw, 25rem"
+            className={styles.curatedImg}
+            style={{ objectPosition: "48% center", filter: "brightness(0.7)" }}
+          />
+        </div>
+        <div className={styles.curatedPhoto}>
+          <Image
+            src="/lake_golden.png"
+            alt="Jess and Jake"
+            fill
+            unoptimized
+            sizes="(max-width: 700px) 50vw, 25rem"
+            className={styles.curatedImg}
+            style={{ objectPosition: "38% center", filter: "brightness(0.85) saturate(0.85)" }}
+          />
+        </div>
       </div>
     </section>
   );

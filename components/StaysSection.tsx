@@ -2,7 +2,7 @@ import styles from "./StaysSection.module.css";
 
 export default function StaysSection() {
   return (
-    <section className={styles.stays} id="travel">
+    <section className={styles.stays}>
       <h2 className={styles.heading}>Hotels &amp; Transport</h2>
 
       <div className={styles.block}>

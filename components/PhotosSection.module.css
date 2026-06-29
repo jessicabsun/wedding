@@ -119,6 +119,25 @@
   color: var(--neon-yellow);
 }
 
+.curatedGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 50rem;
+}
+
+.curatedPhoto {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.curatedImg {
+  object-fit: cover;
+}
+
 .gallery {
   width: 100%;
   display: grid;

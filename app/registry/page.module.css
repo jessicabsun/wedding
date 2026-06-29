@@ -1,36 +1,47 @@
-.ourStorySection {
+.photoWrap {
+  margin: 0 clamp(2rem, 8vw, 8rem) clamp(3rem, 8vw, 5rem);
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.85) saturate(0.85);
+}
+
+.wrap {
   display: flex;
-  min-height: 70vh;
+  min-height: 80vh;
 }
 
 .photoSide {
   position: relative;
   flex: 0 0 50%;
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .photo {
   object-fit: cover;
-  object-position: center center;
-  filter: brightness(0.85) saturate(0.85) url(#grain-story);
+  object-position: 48% center;
+  filter: brightness(0.7);
 }
 
-
-.textSide {
+.content {
   flex: 0 0 50%;
+  background: linear-gradient(to bottom, #1a1a1a, #131313 6rem, #131313 calc(100% - 6rem), #1a1a1a);
+  padding: clamp(4rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: clamp(1.5rem, 3vw, 2rem);
-  padding: clamp(3rem, 6vw, 5rem) clamp(2.5rem, 5vw, 4rem);
-  background: #1a1a1a;
+  gap: 2rem;
 }
 
 .heading {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 600;
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   color: var(--neon-yellow);
   text-shadow:
     0 0 8px rgba(255,68,16,0.9),
@@ -39,17 +50,22 @@
   text-align: center;
 }
 
-.storyText {
+.body {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.05rem, 2vw, 1.4rem);
-  font-weight: 400;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
   color: #f0e8f0;
+  text-align: center;
   line-height: 1.75;
-  letter-spacing: 0.01em;
+  max-width: 34em;
+}
+
+.link {
+  color: var(--neon-yellow);
+  text-decoration: none;
 }
 
 @media (max-width: 700px) {
-  .ourStorySection {
+  .wrap {
     flex-direction: column;
     min-height: auto;
   }
@@ -59,10 +75,4 @@
     aspect-ratio: 3/4;
     width: 100%;
   }
-
-  .textSide {
-    padding: clamp(2.5rem, 8vw, 4rem) clamp(1.5rem, 6vw, 3rem);
-  }
-
-
 }
