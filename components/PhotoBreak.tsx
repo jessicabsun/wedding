@@ -19,6 +19,7 @@ export default function PhotoBreak() {
             src="/divider_right_v2.png"
             alt="Jess and Jake"
             fill
+            unoptimized
             sizes="(max-width: 700px) 100vw, 50vw"
             className={`${styles.photo} ${styles.photoRight}`}
           />
