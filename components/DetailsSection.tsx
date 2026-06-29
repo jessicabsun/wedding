@@ -43,7 +43,7 @@ export default function DetailsSection({ includeFriday }: Props) {
 
             <div className={styles.item}>
               <span className={styles.ceremony}>
-                Private Ceremony &middot; Jacob Wrey Mould Fountain
+                Private Ceremony &middot; Jacob Wrey Mould Fountain (immediate family only)
               </span>
             </div>
 

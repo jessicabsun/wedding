@@ -22,7 +22,7 @@
 
 .photoRight {
   object-position: 38% 20%;
-  filter: brightness(0.85) saturate(0.85) url(#grain-photo);
+  filter: brightness(0.85) saturate(0.85);
 }
 
 

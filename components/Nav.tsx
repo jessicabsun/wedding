@@ -25,6 +25,9 @@ export default function Nav() {
       <Link href={home} className={styles.link}>
         {home === "/weekend" ? "Weekend" : "Wedding"}
       </Link>
+      <Link href="#travel" className={styles.link}>
+        Travel
+      </Link>
       <Link href="/guestbook" className={styles.link}>
         Guest Book
       </Link>
