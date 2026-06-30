@@ -236,6 +236,7 @@
 
   .photoCreditShort {
     display: inline;
+    opacity: 0.22;
   }
 }
 
