@@ -50,7 +50,8 @@ export default function HeroSection() {
         </div>
       </div>
       <p className={styles.photoCredit}>
-        📸 Photo by<br /><a href="https://www.hadybarry.com/home-1" target="_blank" rel="noopener noreferrer" className={styles.photoCreditLink}>Hady Barry</a>
+        <span className={styles.photoCreditFull}>📸 Photo by<br /><a href="https://www.hadybarry.com/home-1" target="_blank" rel="noopener noreferrer" className={styles.photoCreditLink}>Hady Barry</a></span>
+        <span className={styles.photoCreditShort}><a href="https://www.hadybarry.com/home-1" target="_blank" rel="noopener noreferrer" className={styles.photoCreditLink}>📸 HB</a></span>
       </p>
       <p className={styles.copyText}>
         Beloved friends and family, please join us for our wedding celebration &mdash; a night out in New York City, Jake&rsquo;s birthplace and our home since 2018.

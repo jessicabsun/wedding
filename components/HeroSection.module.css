@@ -225,3 +225,17 @@
   color: rgba(240, 232, 240, 0.8);
 }
 
+.photoCreditShort {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .photoCreditFull {
+    display: none;
+  }
+
+  .photoCreditShort {
+    display: inline;
+  }
+}
+
