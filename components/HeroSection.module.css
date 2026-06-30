@@ -201,3 +201,26 @@
   box-shadow: 0 2px 8px rgba(255,68,16,0.2);
 }
 
+.photoCredit {
+  position: absolute;
+  top: clamp(2rem, 5vw, 4rem);
+  left: clamp(2rem, 5vw, 4rem);
+  z-index: 2;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  color: rgba(240, 232, 240, 0.4);
+  margin: 0;
+}
+
+.photoCreditLink {
+  color: rgba(240, 232, 240, 0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.photoCreditLink:hover {
+  color: rgba(240, 232, 240, 0.8);
+}
+
