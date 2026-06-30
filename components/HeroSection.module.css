@@ -60,7 +60,7 @@
 }
 
 .csName {
-  font-size: clamp(3.4rem, 9vw, 6.5rem);
+  font-size: clamp(4.5rem, 9vw, 6.5rem);
   letter-spacing: 0.04em;
 }
 
@@ -236,6 +236,10 @@
 
   .photoCreditShort {
     display: inline;
+  }
+
+  .photoCreditShort .photoCreditLink {
+    color: rgba(240, 232, 240, 0.6);
   }
 
   .photoCreditEmoji {
