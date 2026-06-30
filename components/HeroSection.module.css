@@ -207,16 +207,16 @@
   left: clamp(2rem, 5vw, 4rem);
   z-index: 2;
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
   line-height: 1.6;
-  color: rgba(240, 232, 240, 0.4);
+  color: rgba(240, 232, 240, 0.22);
   text-align: center;
   margin: 0;
 }
 
 .photoCreditLink {
-  color: rgba(240, 232, 240, 0.4);
+  color: rgba(240, 232, 240, 0.22);
   text-decoration: none;
   transition: color 0.2s;
 }
