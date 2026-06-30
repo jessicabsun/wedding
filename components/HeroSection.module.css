@@ -115,8 +115,8 @@
 }
 
 @media (max-width: 700px) {
-  .imageWrap {
-    aspect-ratio: 2/3;
+  .hero {
+    padding-bottom: 4rem;
   }
 
   .title {
