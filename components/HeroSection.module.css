@@ -236,6 +236,9 @@
 
   .photoCreditShort {
     display: inline;
+  }
+
+  .photoCreditEmoji {
     opacity: 0.22;
   }
 }
