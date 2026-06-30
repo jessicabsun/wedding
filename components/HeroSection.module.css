@@ -60,12 +60,12 @@
 }
 
 .csName {
-  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  font-size: clamp(3rem, 11vw, 6.5rem);
   letter-spacing: 0.04em;
 }
 
 .csAmp {
-  font-size: clamp(1.6rem, 5vw, 3.6rem);
+  font-size: clamp(1.8rem, 6vw, 3.6rem);
   color: var(--neon-orange);
   text-shadow:
     0 0 6px rgba(255,68,16,0.8),
