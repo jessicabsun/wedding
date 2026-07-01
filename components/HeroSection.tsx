@@ -50,7 +50,6 @@ export default function HeroSection() {
         </div>
       </div>
       <p className={styles.photoCredit}>
-        <span className={styles.photoCreditFull}>📸 Photo by<br /><a href="https://www.hadybarry.com/home-1" target="_blank" rel="noopener noreferrer" className={styles.photoCreditLink}>Hady Barry</a></span>
         <span className={styles.photoCreditShort}><span className={styles.photoCreditEmoji}>📸</span> <a href="https://www.hadybarry.com/home-1" target="_blank" rel="noopener noreferrer" className={styles.photoCreditLink}>HB</a></span>
       </p>
       <p className={styles.copyText}>

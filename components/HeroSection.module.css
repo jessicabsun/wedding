@@ -230,18 +230,10 @@
 }
 
 .photoCreditShort {
-  display: none;
+  display: inline;
 }
 
 @media (max-width: 700px) {
-  .photoCreditFull {
-    display: none;
-  }
-
-  .photoCreditShort {
-    display: inline;
-  }
-
   .photoCreditShort .photoCreditLink {
     color: rgba(240, 232, 240, 0.4);
   }
