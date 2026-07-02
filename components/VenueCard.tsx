@@ -7,9 +7,10 @@ interface VenueCardProps {
   label: string;
   objectPosition?: string;
   filter?: string;
+  overlayOpacity?: number;
 }
 
-export default function VenueCard({ src, alt, label, objectPosition, filter }: VenueCardProps) {
+export default function VenueCard({ src, alt, label, objectPosition, filter, overlayOpacity = 0.5 }: VenueCardProps) {
   const style: React.CSSProperties = {};
   if (objectPosition) style.objectPosition = objectPosition;
   if (filter) style.filter = filter;
@@ -20,11 +21,12 @@ export default function VenueCard({ src, alt, label, objectPosition, filter }: V
         src={src}
         alt={alt}
         fill
+        unoptimized
         sizes="100vw"
         className={styles.venueImage}
         style={Object.keys(style).length ? style : undefined}
       />
-      <div className={styles.overlay} />
+      <div className={styles.overlay} style={{ background: `rgba(0,0,0,${overlayOpacity})` }} />
       <p className={styles.venueLabel} dangerouslySetInnerHTML={{ __html: label }} />
     </section>
   );

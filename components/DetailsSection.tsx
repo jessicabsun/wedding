@@ -39,7 +39,9 @@ export default function DetailsSection({ includeFriday }: Props) {
 
           <div className={styles.dayBlock}>
             <h3 className={styles.dayName}>Saturday, October 17</h3>
-            <span className={styles.attire}>Black tie optional</span>
+            <div className={styles.attireRow}>
+              <span className={styles.attire}>Black tie optional &middot; Click </span><a href="https://canva.link/rvzrde1nsch6jxp" target="_blank" rel="noopener noreferrer" className={styles.attireLink}>here</a><span className={styles.attire}> for style inspo</span>
+            </div>
 
             <div className={styles.item}>
               <span className={styles.ceremony}>

@@ -1,10 +1,10 @@
 .stays {
-  background: #1a1a1a;
+  background: linear-gradient(to bottom, #1a1a1a, #131313 6rem, #131313 calc(100% - 6rem), #1a1a1a);
   padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .heading {
@@ -20,28 +20,94 @@
   text-align: center;
 }
 
-.columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 6vw, 5rem);
-  width: 100%;
-  max-width: 72rem;
-}
-
-.block {
-  text-align: left;
-}
-
-.body {
+.intro {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
-  font-weight: 400;
+  font-size: clamp(1.25rem, 2vw, 1.4rem);
   color: #f0e8f0;
+  text-align: center;
+  max-width: 36rem;
   line-height: 1.75;
 }
 
-@media (max-width: 700px) {
-  .columns {
-    grid-template-columns: 1fr;
-  }
+.group {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  width: 100%;
+  max-width: 52rem;
+  margin-top: 1rem;
 }
+
+.rule {
+  flex: 1;
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.3),
+    transparent
+  );
+}
+
+.hotelName {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--neon-yellow);
+  letter-spacing: 0.06em;
+  text-align: center;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.items {
+  display: block;
+  text-align: center;
+  max-width: 36rem;
+  line-height: 2;
+}
+
+.item {
+  display: inline;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 2vw, 1.4rem);
+  color: #f0e8f0;
+}
+
+.item::after {
+  content: "\00a0· ";
+  color: var(--neon-yellow);
+  opacity: 0.7;
+  font-size: 1.2rem;
+}
+
+.item:last-child::after {
+  content: "";
+}
+
+.addressLink {
+  display: inline;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 2vw, 1.4rem);
+  color: #f0e8f0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bookLink {
+  display: inline;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 2vw, 1.4rem);
+  color: var(--neon-yellow);
+  text-decoration: none;
+}
+
+.bookLink::after {
+  content: "\00a0· ";
+  color: var(--neon-yellow);
+  opacity: 0.7;
+  font-size: 1.2rem;
+}
+

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import ProtectedPage from "@/components/ProtectedPage";
 import StaysSection from "@/components/StaysSection";
+import RecsSection from "@/components/RecsSection";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "Jess & Jake · Travel" };
@@ -21,6 +22,7 @@ export default function TravelPage() {
             className={styles.heroPhoto}
           />
         </div>
+        <RecsSection />
       </main>
     </ProtectedPage>
   );

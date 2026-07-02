@@ -1,7 +1,8 @@
 .photoWrap {
   position: relative;
   height: 60vh;
-  margin: 0 clamp(2rem, 8vw, 8rem);
+  max-width: 90vh;
+  margin: 0 auto;
   overflow: hidden;
 }
 

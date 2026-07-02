@@ -5,7 +5,7 @@ export const metadata: Metadata = { title: "Jess & Jake · Wedding" };
 import DetailsSection from "@/components/DetailsSection";
 import RsvpSection from "@/components/RsvpSection";
 import OurStorySection from "@/components/OurStorySection";
-import RecsSection from "@/components/RecsSection";
+import PageTourSection from "@/components/PageTourSection";
 export default function DinnerPage() {
   return (
     <ProtectedPage>
@@ -13,7 +13,7 @@ export default function DinnerPage() {
         <DetailsSection />
         <RsvpSection />
         <OurStorySection />
-        <RecsSection />
+        <PageTourSection />
       </main>
     </ProtectedPage>
   );

@@ -1,0 +1,13 @@
+.wrap {
+  background: #1a1a1a;
+  padding: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--neon-orange);
+  text-shadow:
+    0 0 6px rgba(255,68,16,0.7),
+    0 0 14px rgba(255,68,16,0.3);
+  letter-spacing: 0.15em;
+}

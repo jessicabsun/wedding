@@ -41,12 +41,12 @@
 }
 
 .csName {
-  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  font-size: clamp(2.6rem, 10vw, 8rem);
   letter-spacing: 0.04em;
 }
 
 .csAmp {
-  font-size: clamp(1.6rem, 5vw, 3.6rem);
+  font-size: clamp(1.6rem, 5.5vw, 4.5rem);
   color: var(--neon-orange);
   text-shadow:
     0 0 6px rgba(255,68,16,0.8),
@@ -65,8 +65,9 @@
 .csRuleMid { width: 60%; }
 
 .csSub {
-  font-size: clamp(0.9rem, 2.5vw, 1.6rem);
+  font-size: clamp(0.9rem, 2.5vw, 2rem);
   letter-spacing: 0.15em;
+  line-height: 1.4;
   color: var(--neon-orange);
   text-shadow:
     0 0 6px rgba(255,68,16,0.7),

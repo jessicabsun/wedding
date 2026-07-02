@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import ProtectedPage from "@/components/ProtectedPage";
 import RegistrySection from "@/components/RegistrySection";
+import Ornament from "@/components/Ornament";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "Jess & Jake · Registry" };
@@ -21,6 +22,7 @@ export default function RegistryPage() {
             className={styles.photo}
           />
         </div>
+        <Ornament />
       </main>
     </ProtectedPage>
   );

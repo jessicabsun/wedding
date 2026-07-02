@@ -201,7 +201,7 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
       </div>
       <div className={styles.rsvp}>
       <h2 className={styles.heading}>RSVP</h2>
-      <p className={styles.deadline}>We&rsquo;re saving you a seat. RSVP by September 1st &mdash; or earlier if you can.</p>
+      <p className={styles.deadline}>We&rsquo;re saving you a seat. RSVP by September 1st or earlier if you can.</p>
 
       {step === "lookup" && (
         <div className={styles.lookupWrap}>
