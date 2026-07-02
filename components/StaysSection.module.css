@@ -34,7 +34,7 @@
   align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
   width: 100%;
-  max-width: 52rem;
+  max-width: 30rem;
   margin-top: 1rem;
 }
 
