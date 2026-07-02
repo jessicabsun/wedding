@@ -54,6 +54,11 @@ export default function StaysSection() {
           <a href="https://maps.app.goo.gl/HhgHivZkNUQ73moWA" target="_blank" rel="noopener noreferrer" className={styles.addressLink}>170 Broadway</a>
         </span>
       </div>
+      <div className={styles.items}>
+        <span className={styles.item}>Linet Perez</span>
+        <span className={styles.item}>lperez@riwtc.com</span>
+        <span className={styles.item}>347-586-8723</span>
+      </div>
     </section>
   );
 }
