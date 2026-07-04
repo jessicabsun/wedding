@@ -8,6 +8,7 @@ export default function StaysSection() {
       <p className={styles.intro}>
         We&rsquo;ve reserved room blocks at the hotels below. Though rates are discounted,
         we encourage you to compare them online for your dates.
+        Reference Jess &amp; Jake wedding if you call or email for assistance.
       </p>
 
       <div className={styles.group}>
@@ -53,6 +54,10 @@ export default function StaysSection() {
         <span className={styles.item}>
           <a href="https://maps.app.goo.gl/HhgHivZkNUQ73moWA" target="_blank" rel="noopener noreferrer" className={styles.addressLink}>170 Broadway</a>
         </span>
+      </div>
+      <div className={styles.items}>
+        <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1783084496533&key=GRP&app=resvlink&_branch_match_id=1571288151237798423&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi0uy0wtN7IHytiCODmZedlqmSm2huYWxgYWJiaWZqbGxmrZqZW27kEBanVFqWmpQO156fFJRfnlxalFts4ZRfm5qQCn1jIqYQAAAA%3D%3D" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
+        <span className={styles.item}>Available through August 17</span>
       </div>
       <div className={styles.items}>
         <span className={styles.item}>Linet Perez</span>
