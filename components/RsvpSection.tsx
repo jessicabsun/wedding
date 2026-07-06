@@ -174,7 +174,7 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
   }
   const allChoices = [fridayG1, fridayG2, dinnerG1, dinnerG2, dancingG1, dancingG2, ...Object.values(extraChoices)].filter(c => c !== "");
   const allDeclined = allChoices.length > 0 && allChoices.every(c => c === "no");
-  const hasFriday = pageIncludesFriday || guest?.events.includes("friday");
+  const hasFriday = pageIncludesFriday && guest?.events.includes("friday");
   const hasPartner = !!guest?.partner;
   const isPlusOne = guest?.partner === "+1" || guest?.partner?.toLowerCase() === "guest";
   const partnerDisplay = isPlusOne ? (guestName || "Guest") : (guest?.partner || "");
