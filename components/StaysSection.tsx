@@ -6,9 +6,10 @@ export default function StaysSection() {
       <h2 className={styles.heading}>Hotels</h2>
 
       <p className={styles.intro}>
-        We&rsquo;ve reserved room blocks at the hotels below. Though rates are discounted,
-        we encourage you to compare them online for your dates.
-        Reference Jess &amp; Jake wedding if you call or email for assistance.
+        We&rsquo;ve reserved room blocks at the hotels below &mdash; The Evelyn and Ace in NoMad, near our
+        dessert &amp; dancing venue, and The Residence Inn closer to dinner in Chinatown. Though rates
+        are discounted, we encourage you to compare them online for your dates. Reference Jess &amp; Jake
+        wedding if you call or email for assistance.
       </p>
 
       <div className={styles.group}>
