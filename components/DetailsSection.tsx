@@ -65,10 +65,13 @@ export default function DetailsSection({ includeFriday }: Props) {
               <span className={styles.venueDetail}>
                 Brass at The Evelyn Hotel &middot; 7 E 27th St, NoMad &middot; 10pm
               </span>
+              <span className={styles.attire}>Transportation from dinner available</span>
             </div>
           </div>
 
           <div className={styles.ornament}>囍</div>
+
+          <p className={styles.rsvpNote}>RSVP by 9.1.26 below</p>
         </div>
       </div>
     </section>
