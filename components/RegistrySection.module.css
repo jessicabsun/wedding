@@ -34,3 +34,17 @@
   color: var(--neon-yellow);
   text-decoration: none;
 }
+
+.photoWrap {
+  position: relative;
+  height: 40vh;
+  max-width: 60vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center center;
+  filter: brightness(0.85) saturate(0.85);
+}
