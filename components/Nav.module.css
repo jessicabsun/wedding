@@ -29,6 +29,12 @@
   opacity: 1;
 }
 
+.active {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
 @media (max-width: 700px) {
   .nav {
     gap: clamp(0.6rem, 3vw, 1.5rem);
