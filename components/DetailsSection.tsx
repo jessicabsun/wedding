@@ -25,7 +25,7 @@ export default function DetailsSection({ includeFriday }: Props) {
                     Welcome Bites &amp; Cocktails
                   </span>
                   <span className={styles.venueDetail}>
-                    Hosted by Jake&rsquo;s parents
+                    Hosted by Jack &amp; Harriet Huston
                   </span>
                   <span className={styles.venueDetail}>
                     136 E 64th St, Apt 11D, Upper East Side &middot; 7:30&ndash;10pm
@@ -61,7 +61,7 @@ export default function DetailsSection({ includeFriday }: Props) {
             <hr className={styles.eventRule} />
 
             <div className={styles.item}>
-              <span className={styles.venueName}>Dancing</span>
+              <span className={styles.venueName}>Dessert &amp; Dancing</span>
               <span className={styles.venueDetail}>
                 Brass at The Evelyn Hotel &middot; 7 E 27th St, NoMad &middot; 10pm
               </span>

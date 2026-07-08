@@ -21,7 +21,7 @@ export default function Home() {
       <VenueCard
         src="/nyc_skyline.png"
         alt="NYC skyline at night"
-        label="Dancing &middot; Brass"
+        label="Dessert &amp; Dancing &middot; Brass"
         objectPosition="center 70%"
         filter="brightness(1.1) grayscale(1) contrast(0.9)"
         overlayOpacity={0.3}
