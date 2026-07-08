@@ -43,6 +43,9 @@ export default function StaysSection() {
           <a href="https://maps.app.goo.gl/YNEmF3ucjA9tRqzb8" target="_blank" rel="noopener noreferrer" className={styles.addressLink}>20 W 29th St</a>
         </span>
       </div>
+      <div className={styles.items}>
+        <a href="https://reservations.acehotel.com/?adult=1&arrive=2026-10-16&chain=7231&child=0&currency=USD&depart=2026-10-18&dest=ACE&group=IHO2610HUS&hotel=22033&level=hotel&locale=en-US&productcurrency=USD&rooms=1" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
+      </div>
 
       <div className={styles.group}>
         <hr className={styles.rule} />
@@ -58,6 +61,9 @@ export default function StaysSection() {
       <div className={styles.items}>
         <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1783084496533&key=GRP&app=resvlink&_branch_match_id=1571288151237798423&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi0uy0wtN7IHytiCODmZedlqmSm2huYWxgYWJiaWZqbGxmrZqZW27kEBanVFqWmpQO156fFJRfnlxalFts4ZRfm5qQCn1jIqYQAAAA%3D%3D" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
         <span className={styles.item}>Available through August 17</span>
+      </div>
+      <div className={styles.items}>
+        <span className={styles.item}>Group code: JESJESA</span>
       </div>
       <div className={styles.items}>
         <span className={styles.item}>Linet Perez</span>
