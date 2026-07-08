@@ -25,8 +25,9 @@ export default function StaysSection() {
         <span className={styles.item}>Home to Brass, our dance party venue</span>
       </div>
       <div className={styles.items}>
-        <a href="https://be.synxis.com/?Hotel=20986&Chain=16087&group=2610JJB&arrive=2026-10-15&nights=4" className={styles.bookLink}>Click here to book</a>
         <span className={styles.item}>Available through September 15</span>
+        <a href="https://be.synxis.com/?Hotel=20986&Chain=16087&group=2610JJB&arrive=2026-10-15&nights=4" className={styles.bookLink}>Click here to book</a>
+        <span className={styles.item}>Group code: 2610JJB</span>
       </div>
       <div className={styles.items}>
         <span className={styles.item}>evelynsales@triumphotels.com</span>
@@ -46,6 +47,7 @@ export default function StaysSection() {
       </div>
       <div className={styles.items}>
         <a href="https://reservations.acehotel.com/?adult=1&arrive=2026-10-16&chain=7231&child=0&currency=USD&depart=2026-10-18&dest=ACE&group=IHO2610HUS&hotel=22033&level=hotel&locale=en-US&productcurrency=USD&rooms=1" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
+        <span className={styles.item}>Group code: IHO2610HUS</span>
       </div>
 
       <div className={styles.group}>
@@ -60,10 +62,8 @@ export default function StaysSection() {
         </span>
       </div>
       <div className={styles.items}>
-        <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1783084496533&key=GRP&app=resvlink&_branch_match_id=1571288151237798423&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi0uy0wtN7IHytiCODmZedlqmSm2huYWxgYWJiaWZqbGxmrZqZW27kEBanVFqWmpQO156fFJRfnlxalFts4ZRfm5qQCn1jIqYQAAAA%3D%3D" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
         <span className={styles.item}>Available through August 17</span>
-      </div>
-      <div className={styles.items}>
+        <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1783084496533&key=GRP&app=resvlink&_branch_match_id=1571288151237798423&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi0uy0wtN7IHytiCODmZedlqmSm2huYWxgYWJiaWZqbGxmrZqZW27kEBanVFqWmpQO156fFJRfnlxalFts4ZRfm5qQCn1jIqYQAAAA%3D%3D" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
         <span className={styles.item}>Group code: JESJESA</span>
       </div>
       <div className={styles.items}>
