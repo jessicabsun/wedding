@@ -45,8 +45,9 @@ export default function DetailsSection({ includeFriday }: Props) {
 
             <div className={styles.item}>
               <span className={styles.ceremony}>
-                Private Ceremony &middot; Jacob Wrey Mould Fountain<br />Immediate family only
+                Private Ceremony &middot; Jacob Wrey Mould Fountain
               </span>
+              <span className={styles.caption}>Immediate family only</span>
             </div>
 
             <hr className={styles.eventRule} />
@@ -65,13 +66,11 @@ export default function DetailsSection({ includeFriday }: Props) {
               <span className={styles.venueDetail}>
                 Brass at The Evelyn Hotel &middot; 7 E 27th St, NoMad &middot; 10pm
               </span>
-              <span className={styles.attire}>Transportation from dinner available</span>
+              <span className={styles.caption}>Transportation from dinner available</span>
             </div>
           </div>
 
           <div className={styles.ornament}>囍</div>
-
-          <p className={styles.rsvpNote}>RSVP by 9.1.26 below</p>
         </div>
       </div>
     </section>
