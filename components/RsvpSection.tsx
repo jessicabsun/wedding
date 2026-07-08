@@ -180,7 +180,7 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
   const partnerDisplay = isPlusOne ? (guestName || "Guest") : (guest?.partner || "");
 
   return (
-    <section className={styles.rsvpWrap} data-scroll-hide>
+    <section id="rsvp" className={styles.rsvpWrap} data-scroll-hide>
       <div className={styles.photoSide}>
         <svg width="0" height="0" style={{ position: "absolute" }}>
           <defs>

@@ -1,6 +1,7 @@
 .rsvpWrap {
   display: flex;
   min-height: 70vh;
+  scroll-margin-top: 5rem;
 }
 
 .photoSide {

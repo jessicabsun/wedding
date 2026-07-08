@@ -42,6 +42,9 @@ export default function Nav() {
       <Link href="/photos" className={linkClass("/photos")}>
         Photos
       </Link>
+      <Link href={`${home}#rsvp`} className={`${styles.link} ${styles.cta}`}>
+        RSVP
+      </Link>
     </nav>
   );
 }
