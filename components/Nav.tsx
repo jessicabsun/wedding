@@ -25,6 +25,13 @@ export default function Nav() {
   const linkClass = (href: string) =>
     pathname === href ? `${styles.link} ${styles.active}` : styles.link;
 
+  const handleRsvpClick = (e: React.MouseEvent) => {
+    if (pathname !== home) return;
+    e.preventDefault();
+    document.getElementById("rsvp")?.scrollIntoView();
+    window.history.pushState(null, "", `${home}#rsvp`);
+  };
+
   return (
     <nav className={styles.nav}>
       <Link href={home} className={linkClass(home)}>
@@ -33,16 +40,13 @@ export default function Nav() {
       <Link href="/travel" className={linkClass("/travel")}>
         Travel
       </Link>
-      <Link href="/registry" className={linkClass("/registry")}>
-        Registry
-      </Link>
       <Link href="/guestbook" className={linkClass("/guestbook")}>
         Guest Book
       </Link>
       <Link href="/photos" className={linkClass("/photos")}>
         Photos
       </Link>
-      <Link href={`${home}#rsvp`} className={`${styles.link} ${styles.cta}`}>
+      <Link href={`${home}#rsvp`} className={`${styles.link} ${styles.cta}`} onClick={handleRsvpClick}>
         RSVP
       </Link>
     </nav>

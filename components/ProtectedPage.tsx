@@ -23,6 +23,11 @@ export default function ProtectedPage({ children }: { children: React.ReactNode 
     }
   }, [router]);
 
+  useEffect(() => {
+    if (!authorized || !window.location.hash) return;
+    document.querySelector(window.location.hash)?.scrollIntoView();
+  }, [authorized]);
+
   if (!authorized) {
     return (
       <div className={styles.loading}>
