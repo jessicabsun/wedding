@@ -5,6 +5,7 @@
   right: 0;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: clamp(1.5rem, 4vw, 3rem);
   padding: 1rem 1.5rem;
