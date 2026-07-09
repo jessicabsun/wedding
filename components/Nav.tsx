@@ -50,6 +50,7 @@ export default function Nav() {
       </button>
 
       <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ""}`}>
+        <div className={styles.menuOrnament} aria-hidden="true">囍</div>
         <Link href={home} className={linkClass(home)} onClick={() => setMenuOpen(false)}>
           {home === "/weekend" ? "Weekend" : "Wedding"}
         </Link>
