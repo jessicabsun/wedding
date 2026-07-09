@@ -1,4 +1,10 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .registry {
+  order: 1;
   background: linear-gradient(to bottom, #1a1a1a, #131313 6rem, #131313 calc(100% - 6rem), #1a1a1a);
   padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 8vw, 6rem);
   display: flex;
@@ -37,6 +43,7 @@
 }
 
 .photoWrap {
+  order: 2;
   position: relative;
   height: 50vh;
   max-width: 75vh;
@@ -48,4 +55,14 @@
   object-fit: cover;
   object-position: center center;
   filter: brightness(0.85) saturate(0.85) url(#grain-registry);
+}
+
+@media (max-width: 700px) {
+  .registry {
+    order: 2;
+  }
+
+  .photoWrap {
+    order: 1;
+  }
 }
