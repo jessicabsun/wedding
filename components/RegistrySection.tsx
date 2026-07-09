@@ -4,7 +4,7 @@ import styles from "./RegistrySection.module.css";
 export default function RegistrySection() {
   return (
     <>
-      <section className={styles.registry}>
+      <section id="registry" className={styles.registry}>
         <h2 className={styles.heading}>Registry</h2>
         <p className={styles.body}>
           Your presence is gift enough. But if you&rsquo;d like to contribute to

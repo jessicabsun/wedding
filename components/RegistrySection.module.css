@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  scroll-margin-top: 5rem;
 }
 
 .heading {
