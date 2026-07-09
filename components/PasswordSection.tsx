@@ -2,15 +2,17 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { isValidPassword, getAccessiblePages, COOKIE_NAME } from "@/lib/permissions";
 import styles from "./PasswordSection.module.css";
 
 export default function PasswordSection() {
   const router = useRouter();
+  const [labelVisible, setLabelVisible] = useState(true);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const input = e.currentTarget.elements.namedItem("password") as HTMLInputElement;
+    const input = e.currentTarget.elements.namedItem("event-code") as HTMLInputElement;
     const value = (input?.value ?? "").trim().toLowerCase();
     if (!isValidPassword(value)) return;
 
@@ -30,12 +32,23 @@ export default function PasswordSection() {
       />
       <div className={styles.overlay} />
       <form className={styles.field} onSubmit={handleSubmit}>
+        {labelVisible && (
+          <span className={styles.label}>enter password</span>
+        )}
         <input
           className={styles.input}
-          type="password"
-          name="password"
-          placeholder="enter password"
+          type="text"
+          name="event-code"
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
+          placeholder=" "
           aria-label="Event password"
+          onFocus={() => setLabelVisible(false)}
+          onBlur={(e) => {
+            if (!e.currentTarget.value) setLabelVisible(true);
+          }}
         />
       </form>
     </section>

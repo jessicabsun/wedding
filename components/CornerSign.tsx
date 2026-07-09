@@ -11,7 +11,7 @@ export default function CornerSign() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const input = e.currentTarget.elements.namedItem("password") as HTMLInputElement;
+    const input = e.currentTarget.elements.namedItem("event-code") as HTMLInputElement;
     const value = (input?.value ?? "").trim().toLowerCase();
     if (!isValidPassword(value)) return;
 
@@ -42,8 +42,12 @@ export default function CornerSign() {
         )}
         <input
           className={styles.pwInput}
-          type="password"
-          name="password"
+          type="text"
+          name="event-code"
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
           placeholder=" "
           aria-label="Event password"
           onFocus={() => setLabelVisible(false)}

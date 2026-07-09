@@ -2,15 +2,17 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { isValidPassword, getAccessiblePages, COOKIE_NAME } from "@/lib/permissions";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
   const router = useRouter();
+  const [labelVisible, setLabelVisible] = useState(true);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const input = e.currentTarget.elements.namedItem("password") as HTMLInputElement;
+    const input = e.currentTarget.elements.namedItem("event-code") as HTMLInputElement;
     const value = (input?.value ?? "").trim().toLowerCase();
     if (!isValidPassword(value)) return;
 
@@ -41,12 +43,23 @@ export default function HeroSection() {
         <span className={`${styles.csLine} ${styles.csSub}`}>10.17.26</span>
         <span className={`${styles.csLine} ${styles.csSub}`}>NYC</span>
         <form className={styles.pwField} onSubmit={handleSubmit}>
+          {labelVisible && (
+            <span className={styles.pwLabel}>enter password</span>
+          )}
           <input
             className={styles.pwInput}
-            type="password"
-            name="password"
-            placeholder="enter password"
+            type="text"
+            name="event-code"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            placeholder=" "
             aria-label="Event password"
+            onFocus={() => setLabelVisible(false)}
+            onBlur={(e) => {
+              if (!e.currentTarget.value) setLabelVisible(true);
+            }}
           />
         </form>
       </div>

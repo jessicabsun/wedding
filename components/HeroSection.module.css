@@ -178,26 +178,11 @@
   width: clamp(9rem, 18vw, 14rem);
   padding: 0.1em 0;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-text-security: disc;
 }
 
 .pwInput::placeholder {
-  color: var(--neon-yellow);
-  font-style: italic;
-  letter-spacing: 0.2em;
-}
-
-.pwInput:placeholder-shown {
-  animation: textPulse 2.8s ease-in-out infinite;
-}
-
-@keyframes textPulse {
-  0%, 100% {
-    color: rgba(255, 245, 160, 0.45);
-  }
-  50% {
-    color: rgba(255, 245, 160, 1);
-    text-shadow: 0 0 12px rgba(255,68,16,1), 0 0 28px rgba(255,68,16,0.6);
-  }
+  color: transparent;
 }
 
 .pwInput:focus {
