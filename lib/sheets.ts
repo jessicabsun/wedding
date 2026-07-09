@@ -1,20 +1,30 @@
 import { google } from "googleapis";
 
+let auth: InstanceType<typeof google.auth.GoogleAuth> | null = null;
+
 function getAuth() {
-  return new google.auth.GoogleAuth({
-    credentials: {
-      client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-    },
-    scopes: [
-      "https://www.googleapis.com/auth/spreadsheets",
-      "https://www.googleapis.com/auth/drive.file",
-    ],
-  });
+  if (!auth) {
+    auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+      },
+      scopes: [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive.file",
+      ],
+    });
+  }
+  return auth;
 }
 
+let sheets: ReturnType<typeof google.sheets> | null = null;
+
 function getSheets() {
-  return google.sheets({ version: "v4", auth: getAuth() });
+  if (!sheets) {
+    sheets = google.sheets({ version: "v4", auth: getAuth() });
+  }
+  return sheets;
 }
 
 const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID!;
