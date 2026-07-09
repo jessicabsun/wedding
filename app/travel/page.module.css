@@ -9,7 +9,7 @@
 .heroPhoto {
   object-fit: cover;
   object-position: center center;
-  filter: brightness(0.85) saturate(0.85);
+  filter: brightness(0.85) saturate(0.85) url(#grain-travel);
 }
 
 .wrap {

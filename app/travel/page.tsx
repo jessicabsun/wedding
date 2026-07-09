@@ -11,6 +11,15 @@ export default function TravelPage() {
   return (
     <ProtectedPage>
       <main style={{ background: "#1a1a1a" }}>
+        <svg width="0" height="0" style={{ position: "absolute" }}>
+          <defs>
+            <filter id="grain-travel" x="0%" y="0%" width="100%" height="100%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
+              <feColorMatrix type="saturate" values="0" />
+              <feBlend in="SourceGraphic" mode="multiply" />
+            </filter>
+          </defs>
+        </svg>
         <StaysSection />
         <div className={styles.photoWrap}>
           <Image
