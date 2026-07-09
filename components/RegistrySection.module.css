@@ -38,8 +38,8 @@
 
 .photoWrap {
   position: relative;
-  height: 40vh;
-  max-width: 60vh;
+  height: 50vh;
+  max-width: 75vh;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -47,5 +47,5 @@
 .photo {
   object-fit: cover;
   object-position: center center;
-  filter: brightness(0.85) saturate(0.85);
+  filter: brightness(0.85) saturate(0.85) url(#grain-registry);
 }

@@ -4,6 +4,15 @@ import styles from "./RegistrySection.module.css";
 export default function RegistrySection() {
   return (
     <>
+      <svg width="0" height="0" style={{ position: "absolute" }}>
+        <defs>
+          <filter id="grain-registry" x="0%" y="0%" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+            <feBlend in="SourceGraphic" mode="multiply" />
+          </filter>
+        </defs>
+      </svg>
       <section id="registry" className={styles.registry}>
         <h2 className={styles.heading}>Registry</h2>
         <p className={styles.body}>
