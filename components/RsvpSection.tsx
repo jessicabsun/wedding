@@ -180,11 +180,11 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
   const partnerDisplay = isPlusOne ? (guestName || "Guest") : (guest?.partner || "");
 
   return (
-    <section id="rsvp" className={styles.rsvpWrap} data-scroll-hide>
+    <section className={styles.rsvpWrap} data-scroll-hide>
       <div className={styles.photoSide}>
         <svg width="0" height="0" style={{ position: "absolute" }}>
           <defs>
-            <filter id="grain-rsvp" x="0%" y="0%" width="100%" height="100%">
+            <filter id="grain-rsvp" x="-20%" y="-20%" width="140%" height="140%">
               <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
               <feColorMatrix type="saturate" values="0" />
               <feBlend in="SourceGraphic" mode="multiply" />
@@ -199,7 +199,7 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
           className={styles.photo}
         />
       </div>
-      <div className={styles.rsvp}>
+      <div id="rsvp" className={styles.rsvp}>
       <h2 className={styles.heading}>RSVP</h2>
       <p className={styles.deadline}>We&rsquo;re saving you a seat. RSVP by September 1st or earlier if you can.</p>
 

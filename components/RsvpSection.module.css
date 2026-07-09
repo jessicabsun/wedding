@@ -1,7 +1,6 @@
 .rsvpWrap {
   display: flex;
   min-height: 70vh;
-  scroll-margin-top: 5rem;
 }
 
 .photoSide {
@@ -25,6 +24,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
+  scroll-margin-top: 5rem;
 }
 
 .heading {
