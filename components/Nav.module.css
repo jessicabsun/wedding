@@ -71,6 +71,8 @@
 
   .menuToggle {
     display: block;
+    position: relative;
+    z-index: 1;
     pointer-events: auto;
     background: none;
     border: none;
@@ -82,19 +84,20 @@
     cursor: pointer;
   }
 
+  .cta {
+    position: relative;
+    z-index: 1;
+  }
+
   .links {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    position: fixed;
+    inset: 0;
     flex-direction: column;
     align-items: center;
-    gap: 1.4rem;
-    padding: 1.75rem 1rem 3rem;
-    background: linear-gradient(to bottom, rgba(16, 0, 8, 0.8) 70%, transparent);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    justify-content: center;
+    gap: 2.25rem;
+    background: #1a1a1a;
     pointer-events: auto;
   }
 
@@ -102,8 +105,10 @@
     display: flex;
   }
 
-  .link {
-    font-size: clamp(0.95rem, 4vw, 1.15rem);
+  .linksOpen .link {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    font-style: italic;
     letter-spacing: 0.06em;
+    text-shadow: 0 0 10px rgba(255, 170, 50, 0.3), 0 0 25px rgba(255, 170, 50, 0.15);
   }
 }
