@@ -7,10 +7,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: clamp(1.5rem, 4vw, 3rem);
   padding: 1rem 1.5rem;
   background: linear-gradient(to bottom, rgba(16, 0, 8, 0.85), transparent);
   pointer-events: none;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.menuToggle {
+  display: none;
 }
 
 .link {
@@ -52,12 +64,44 @@
 
 @media (max-width: 700px) {
   .nav {
-    gap: clamp(0.6rem, 3vw, 1.5rem);
+    justify-content: space-between;
+    gap: 0;
     padding: 0.75rem 1rem;
   }
 
+  .menuToggle {
+    display: block;
+    pointer-events: auto;
+    background: none;
+    border: none;
+    color: var(--neon-yellow);
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: 0.4rem 0.6rem;
+    margin: -0.4rem -0.6rem;
+    cursor: pointer;
+  }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.5rem 1rem 2rem;
+    background: rgba(16, 0, 8, 0.95);
+    pointer-events: auto;
+  }
+
+  .linksOpen {
+    display: flex;
+  }
+
   .link {
-    font-size: clamp(0.75rem, 2.8vw, 0.9rem);
-    letter-spacing: 0.04em;
+    font-size: clamp(0.95rem, 4vw, 1.15rem);
+    letter-spacing: 0.06em;
   }
 }
