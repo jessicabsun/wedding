@@ -97,7 +97,6 @@ export default function PhotosSection() {
             src="/lake_golden.png"
             alt="Jess and Jake"
             fill
-            unoptimized
             sizes="(max-width: 700px) 50vw, 25rem"
             className={styles.curatedImg}
             style={{ objectPosition: "38% center", filter: "brightness(0.85) saturate(0.85)" }}
