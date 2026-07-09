@@ -26,7 +26,6 @@ export default function TravelPage() {
             src="/travel_photo.png"
             alt="Jess and Jake"
             fill
-            unoptimized
             sizes="(max-width: 700px) 100vw, 80vw"
             className={styles.heroPhoto}
           />

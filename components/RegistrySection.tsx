@@ -27,7 +27,6 @@ export default function RegistrySection() {
             src="/registry_photo.png"
             alt="Jess and Jake"
             fill
-            unoptimized
             sizes="(max-width: 700px) 100vw, 80vw"
             className={styles.photo}
           />

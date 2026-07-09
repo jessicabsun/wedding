@@ -21,7 +21,6 @@ export default function VenueCard({ src, alt, label, objectPosition, filter, ove
         src={src}
         alt={alt}
         fill
-        unoptimized
         sizes="100vw"
         className={styles.venueImage}
         style={Object.keys(style).length ? style : undefined}
