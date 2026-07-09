@@ -132,17 +132,6 @@
   }
 }
 
-@keyframes neonPulse {
-  0%, 100% {
-    text-shadow: 0 0 6px rgba(255,68,16,0.6), 0 0 14px rgba(255,68,16,0.3);
-    opacity: 0.45;
-  }
-  50% {
-    text-shadow: 0 0 12px rgba(255,68,16,1), 0 0 28px rgba(255,68,16,0.6), 0 0 50px rgba(255,68,16,0.2);
-    opacity: 1;
-  }
-}
-
 .pwField {
   margin-top: clamp(1rem, 2.5vw, 1.8rem);
   display: flex;
@@ -150,18 +139,6 @@
   align-items: center;
   opacity: 0;
   animation: fadeUp 1.2s ease forwards 1.4s;
-}
-
-.pwLabel {
-  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: clamp(0.65rem, 1.6vw, 0.85rem);
-  letter-spacing: 0.2em;
-  color: var(--neon-yellow);
-  pointer-events: none;
-  animation: neonPulse 2.8s ease-in-out infinite;
-  margin-bottom: 0;
-  line-height: 1;
 }
 
 .pwInput {
@@ -182,7 +159,23 @@
 }
 
 .pwInput::placeholder {
-  color: transparent;
+  color: var(--neon-yellow);
+  font-style: italic;
+  letter-spacing: 0.2em;
+}
+
+.pwInput:placeholder-shown {
+  animation: textPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% {
+    color: rgba(255, 245, 160, 0.45);
+  }
+  50% {
+    color: rgba(255, 245, 160, 1);
+    text-shadow: 0 0 12px rgba(255,68,16,1), 0 0 28px rgba(255,68,16,0.6);
+  }
 }
 
 .pwInput:focus {

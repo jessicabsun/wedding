@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { isValidPassword, getAccessiblePages, COOKIE_NAME } from "@/lib/permissions";
 import styles from "./HeroSection.module.css";
 
 export default function HeroSection() {
   const router = useRouter();
-  const [labelVisible, setLabelVisible] = useState(true);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -43,9 +41,6 @@ export default function HeroSection() {
         <span className={`${styles.csLine} ${styles.csSub}`}>10.17.26</span>
         <span className={`${styles.csLine} ${styles.csSub}`}>NYC</span>
         <form className={styles.pwField} onSubmit={handleSubmit}>
-          {labelVisible && (
-            <span className={styles.pwLabel}>enter password</span>
-          )}
           <input
             className={styles.pwInput}
             type="text"
@@ -54,12 +49,8 @@ export default function HeroSection() {
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck={false}
-            placeholder=" "
+            placeholder="enter password"
             aria-label="Event password"
-            onFocus={() => setLabelVisible(false)}
-            onBlur={(e) => {
-              if (!e.currentTarget.value) setLabelVisible(true);
-            }}
           />
         </form>
       </div>
