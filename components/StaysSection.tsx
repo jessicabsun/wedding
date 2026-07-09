@@ -46,6 +46,7 @@ export default function StaysSection() {
         </span>
       </div>
       <div className={`${styles.items} ${styles.bookRow}`}>
+        <span className={styles.item}>Available through September 17</span>
         <a href="https://reservations.acehotel.com/?adult=1&arrive=2026-10-16&chain=7231&child=0&currency=USD&depart=2026-10-18&dest=ACE&group=IHO2610HUS&hotel=22033&level=hotel&locale=en-US&productcurrency=USD&rooms=1" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
         <span className={styles.item}>group code: IHO2610HUS</span>
       </div>
