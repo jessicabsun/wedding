@@ -8,9 +8,10 @@ import styles from "./HeroSection.module.css";
 export default function HeroSection() {
   const router = useRouter();
 
-  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key !== "Enter") return;
-    const value = (e.currentTarget.value ?? "").trim().toLowerCase();
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const input = e.currentTarget.elements.namedItem("password") as HTMLInputElement;
+    const value = (input?.value ?? "").trim().toLowerCase();
     if (!isValidPassword(value)) return;
 
     document.cookie = `${COOKIE_NAME}=${value}; path=/; max-age=${60 * 60 * 24 * 30}`;
@@ -39,15 +40,15 @@ export default function HeroSection() {
         <span className={`${styles.csLine} ${styles.csRule} ${styles.csRuleMid}`} />
         <span className={`${styles.csLine} ${styles.csSub}`}>10.17.26</span>
         <span className={`${styles.csLine} ${styles.csSub}`}>NYC</span>
-        <div className={styles.pwField}>
+        <form className={styles.pwField} onSubmit={handleSubmit}>
           <input
             className={styles.pwInput}
             type="password"
+            name="password"
             placeholder="enter password"
             aria-label="Event password"
-            onKeyDown={handleKeyDown}
           />
-        </div>
+        </form>
       </div>
       <p className={styles.photoCredit}>
         <span className={styles.photoCreditShort}><span className={styles.photoCreditEmoji}>📸</span> <a href="https://www.hadybarry.com/home-1" target="_blank" rel="noopener noreferrer" className={styles.photoCreditLink}>HB</a></span>

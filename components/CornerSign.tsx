@@ -9,9 +9,10 @@ export default function CornerSign() {
   const router = useRouter();
   const [labelVisible, setLabelVisible] = useState(true);
 
-  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key !== "Enter") return;
-    const value = (e.currentTarget.value ?? "").trim().toLowerCase();
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const input = e.currentTarget.elements.namedItem("password") as HTMLInputElement;
+    const value = (input?.value ?? "").trim().toLowerCase();
     if (!isValidPassword(value)) return;
 
     // Set cookie
@@ -35,22 +36,22 @@ export default function CornerSign() {
       <span className={`${styles.csLine} ${styles.csSub}`}>10.17.26</span>
       <span className={`${styles.csLine} ${styles.csSub}`}>NYC</span>
 
-      <div className={styles.pwField}>
+      <form className={styles.pwField} onSubmit={handleSubmit}>
         {labelVisible && (
           <span className={styles.pwLabel}>enter password</span>
         )}
         <input
           className={styles.pwInput}
           type="password"
+          name="password"
           placeholder=" "
           aria-label="Event password"
           onFocus={() => setLabelVisible(false)}
           onBlur={(e) => {
             if (!e.currentTarget.value) setLabelVisible(true);
           }}
-          onKeyDown={handleKeyDown}
         />
-      </div>
+      </form>
     </div>
   );
 }

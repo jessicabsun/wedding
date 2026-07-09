@@ -8,9 +8,10 @@ import styles from "./PasswordSection.module.css";
 export default function PasswordSection() {
   const router = useRouter();
 
-  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key !== "Enter") return;
-    const value = (e.currentTarget.value ?? "").trim().toLowerCase();
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const input = e.currentTarget.elements.namedItem("password") as HTMLInputElement;
+    const value = (input?.value ?? "").trim().toLowerCase();
     if (!isValidPassword(value)) return;
 
     document.cookie = `${COOKIE_NAME}=${value}; path=/; max-age=${60 * 60 * 24 * 30}`;
@@ -28,15 +29,15 @@ export default function PasswordSection() {
         className={styles.bgImage}
       />
       <div className={styles.overlay} />
-      <div className={styles.field}>
+      <form className={styles.field} onSubmit={handleSubmit}>
         <input
           className={styles.input}
           type="password"
+          name="password"
           placeholder="enter password"
           aria-label="Event password"
-          onKeyDown={handleKeyDown}
         />
-      </div>
+      </form>
     </section>
   );
 }
