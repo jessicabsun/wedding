@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
+import { unstable_cache, revalidateTag } from "next/cache";
 import { getGuestbookEntries, submitGuestbookEntry, deleteGuestbookEntry, updateGuestbookEntry } from "@/lib/sheets";
 
+const getCachedGuestbookEntries = unstable_cache(
+  getGuestbookEntries,
+  ["guestbook-entries"],
+  { revalidate: 20, tags: ["guestbook"] }
+);
+
 export async function GET() {
-  const entries = await getGuestbookEntries();
+  const entries = await getCachedGuestbookEntries();
   return NextResponse.json({ entries });
 }
 
@@ -18,6 +25,7 @@ export async function POST(req: NextRequest) {
   }
 
   await submitGuestbookEntry({ name, travelingFrom, howTheyKnow, message });
+  revalidateTag("guestbook", { expire: 0 });
   return NextResponse.json({ success: true });
 }
 
@@ -33,6 +41,7 @@ export async function PUT(req: NextRequest) {
   }
 
   await updateGuestbookEntry(row, { name, travelingFrom, howTheyKnow, message });
+  revalidateTag("guestbook", { expire: 0 });
   return NextResponse.json({ success: true });
 }
 
@@ -48,5 +57,6 @@ export async function DELETE(req: NextRequest) {
   }
 
   await deleteGuestbookEntry(row);
+  revalidateTag("guestbook", { expire: 0 });
   return NextResponse.json({ success: true });
 }
