@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./RsvpSection.module.css";
 
@@ -34,6 +34,11 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
   const [mailingAddress, setMailingAddress] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
+  useEffect(() => {
+    if (step !== "done") return;
+    document.getElementById("rsvp")?.scrollIntoView();
+  }, [step]);
 
   async function handleLookup() {
     if (!query.trim()) return;

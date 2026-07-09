@@ -25,7 +25,14 @@ export default function ProtectedPage({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     if (!authorized || !window.location.hash) return;
-    document.querySelector(window.location.hash)?.scrollIntoView();
+    // Double rAF: wait until after the browser's own hash-scroll attempt
+    // (which fires too early, before children have mounted) has settled,
+    // so ours runs last and reliably wins.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.querySelector(window.location.hash)?.scrollIntoView();
+      });
+    });
   }, [authorized]);
 
   if (!authorized) {
