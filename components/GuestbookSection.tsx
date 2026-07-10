@@ -18,12 +18,14 @@ export default function GuestbookSection() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [entriesLoading, setEntriesLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/guestbook")
       .then((r) => r.json())
       .then((data) => setEntries(data.entries || []))
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setEntriesLoading(false));
   }, []);
 
   async function handleSubmit() {
@@ -103,6 +105,8 @@ export default function GuestbookSection() {
       ) : (
         <p className={styles.thanks}>Thank you for signing!</p>
       )}
+
+      {entriesLoading && <p className={styles.entriesLoading}>Loading entries&hellip;</p>}
 
       {entries.length > 0 && (
         <div className={styles.entries}>
