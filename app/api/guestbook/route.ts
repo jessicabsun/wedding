@@ -17,9 +17,9 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { name, travelingFrom, howTheyKnow, message } = body;
 
-  if (!name || !message) {
+  if (!name) {
     return NextResponse.json(
-      { error: "Name and message are required" },
+      { error: "Name is required" },
       { status: 400 }
     );
   }

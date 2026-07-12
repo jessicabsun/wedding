@@ -29,7 +29,7 @@ export default function GuestbookSection() {
   }, []);
 
   async function handleSubmit() {
-    if (!name.trim() || !message.trim()) return;
+    if (!name.trim()) return;
     setLoading(true);
     try {
       await fetch("/api/guestbook", {
@@ -89,7 +89,7 @@ export default function GuestbookSection() {
           />
           <textarea
             className={styles.textarea}
-            placeholder="Leave a message for the group — marriage advice welcome!"
+            placeholder="Leave a message for the group — marriage advice welcome! (optional)"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={4}
@@ -97,7 +97,7 @@ export default function GuestbookSection() {
           <button
             className={styles.button}
             onClick={handleSubmit}
-            disabled={loading || !name.trim() || !message.trim()}
+            disabled={loading || !name.trim()}
           >
             {loading ? "Signing..." : "Sign the Guest Book"}
           </button>
@@ -148,8 +148,12 @@ function GuestbookCard({ entry, index }: { entry: Entry; index: number }) {
       <div className={styles.cardInner}>
         <p className={styles.cardName}>{entry.name}</p>
         {meta && <p className={styles.cardMeta}>{meta}</p>}
-        <hr className={styles.cardRule} />
-        <p className={styles.cardMessage}>&ldquo;{entry.message}&rdquo;</p>
+        {entry.message && (
+          <>
+            <hr className={styles.cardRule} />
+            <p className={styles.cardMessage}>&ldquo;{entry.message}&rdquo;</p>
+          </>
+        )}
       </div>
     </div>
   );
