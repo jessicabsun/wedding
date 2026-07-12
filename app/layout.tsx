@@ -56,7 +56,7 @@ export default function RootLayout({
     >
       <body>
         <GrainOverlay />
-        <div style={{ overflowX: "hidden", width: "100%" }}>{children}</div>
+        {children}
       </body>
     </html>
   );

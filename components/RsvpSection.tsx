@@ -193,6 +193,7 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
               <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
               <feColorMatrix type="saturate" values="0" />
               <feBlend in="SourceGraphic" mode="multiply" />
+              <feComposite in2="SourceGraphic" operator="in" />
             </filter>
           </defs>
         </svg>

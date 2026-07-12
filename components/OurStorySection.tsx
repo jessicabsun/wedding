@@ -10,6 +10,7 @@ export default function OurStorySection() {
             <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
             <feColorMatrix type="saturate" values="0" />
             <feBlend in="SourceGraphic" mode="multiply" />
+            <feComposite in2="SourceGraphic" operator="in" />
           </filter>
         </defs>
       </svg>
@@ -22,7 +23,7 @@ export default function OurStorySection() {
             to New York for the adventure of a lifetime.
           </p>
           <p className={styles.storyText}>
-            After six years, countless parties hosted, miles driven, and &ldquo;NYC&rsquo;s Best&rdquo;
+            After six years, countless parties hosted, miles driven, and &ldquo;NYC&rsquo;s best&rdquo;
             pizzas consumed, Jake proposed one late summer morning
             on a bench in Herbert Von King, their Bed-Stuy neighborhood park. Now, they
             can&rsquo;t wait to make things official and gather everyone they love in one room.

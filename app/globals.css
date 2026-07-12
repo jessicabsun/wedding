@@ -20,6 +20,7 @@ html {
   background: #1a1a1a;
   overscroll-behavior: none;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
   color: #f0e8f0;
   font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {
