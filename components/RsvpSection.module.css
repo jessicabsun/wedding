@@ -12,7 +12,7 @@
 .photo {
   object-fit: cover;
   object-position: center center;
-  filter: brightness(0.85) saturate(0.85) url(#grain-rsvp);
+  filter: brightness(0.95) contrast(1.12) saturate(0.85) url(#grain-rsvp);
 }
 
 
