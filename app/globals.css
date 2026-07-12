@@ -21,6 +21,7 @@ html {
   overscroll-behavior: none;
   overflow-x: hidden;
   overflow-x: clip;
+  touch-action: pan-y;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
   overflow-x: clip;
+  touch-action: pan-y;
 }
 
 a {

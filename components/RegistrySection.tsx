@@ -22,7 +22,7 @@ export default function RegistrySection() {
             contribute to the start of our new life together, we&rsquo;ve
             set up a house (or apartment!) fund to help us make Brooklyn our
             long-term home and place we start our family. Thank you for
-            being a part of our next chapter.
+            being a part of our next chapter!
           </p>
           <a
             href="https://www.zola.com/registry/jakeandjessoctober17"
