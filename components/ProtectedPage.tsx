@@ -30,7 +30,18 @@ export default function ProtectedPage({ children }: { children: React.ReactNode 
     // so ours runs last and reliably wins.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        document.querySelector(window.location.hash)?.scrollIntoView();
+        // A hash can end up with multiple "#" segments jammed together
+        // (e.g. "#registry#rsvp"); fall back through each segment,
+        // most recent first, so it still lands somewhere real.
+        const raw = window.location.hash.slice(1);
+        const segments = raw.split("#").filter(Boolean).reverse();
+        for (const id of [raw, ...segments]) {
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView();
+            break;
+          }
+        }
       });
     });
   }, [authorized]);

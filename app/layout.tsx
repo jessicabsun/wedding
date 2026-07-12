@@ -51,11 +51,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${cormorant.variable} ${josefin.variable} ${bebas.variable} ${unbounded.variable} ${pinyon.variable}`}
     >
       <body>
         <GrainOverlay />
-        {children}
+        <div style={{ overflowX: "hidden", width: "100%" }}>{children}</div>
       </body>
     </html>
   );

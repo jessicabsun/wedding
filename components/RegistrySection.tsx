@@ -6,7 +6,7 @@ export default function RegistrySection() {
     <>
       <svg width="0" height="0" style={{ position: "absolute" }}>
         <defs>
-          <filter id="grain-registry" x="0%" y="0%" width="100%" height="100%">
+          <filter id="grain-registry" x="-2%" y="-2%" width="104%" height="104%">
             <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
             <feColorMatrix type="saturate" values="0" />
             <feBlend in="SourceGraphic" mode="multiply" />
@@ -17,11 +17,11 @@ export default function RegistrySection() {
         <section id="registry" className={styles.registry}>
           <h2 className={styles.heading}>Registry</h2>
           <p className={styles.body}>
-            Your presence is gift enough. But if you&rsquo;d like to contribute to
-            the start of our new life together, we&rsquo;ve set up a house fund on
-            Zola. We&rsquo;re saving toward our first home (or apartment!) to make
-            Brooklyn our long-term home and the place where we start our family.
-            Thank you for helping us start this next chapter.
+            Your presence at our wedding celebration is gift enough. But if
+            you&rsquo;d like to contribute to the start of our new life together,
+            we&rsquo;ve set up a house (or apartment!) fund to help us make Brooklyn our long-term
+            home and the place we start our family. Thank you for being a part
+            of our next chapter!
           </p>
           <a
             href="https://www.zola.com/registry/jakeandjessoctober17"

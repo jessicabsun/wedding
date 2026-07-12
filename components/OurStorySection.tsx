@@ -6,7 +6,7 @@ export default function OurStorySection() {
     <>
       <svg width="0" height="0" style={{ position: "absolute" }}>
         <defs>
-          <filter id="grain-story" x="0%" y="0%" width="100%" height="100%">
+          <filter id="grain-story" x="-2%" y="-2%" width="104%" height="104%">
             <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" />
             <feColorMatrix type="saturate" values="0" />
             <feBlend in="SourceGraphic" mode="multiply" />
