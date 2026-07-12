@@ -37,9 +37,25 @@
   width: 100%;
 }
 
-.link {
+.button {
+  display: inline-block;
+  font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 1px solid var(--neon-yellow);
   color: var(--neon-yellow);
   text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 2px;
+}
+
+.button:hover {
+  background: var(--neon-yellow);
+  color: #1a1a1a;
 }
 
 .photoWrap {
