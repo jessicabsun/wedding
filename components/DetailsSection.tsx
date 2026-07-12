@@ -28,7 +28,7 @@ export default function DetailsSection({ includeFriday }: Props) {
               <hr className={styles.eventRule} />
 
               <div className={styles.item}>
-                <span className={styles.venueName}>Dinner</span>
+                <span className={styles.venueName}>Dinner Celebration</span>
                 <span className={styles.venueDetail}>
                   Golden Unicorn &middot; 18 E Broadway, Chinatown &middot; 6pm
                 </span>

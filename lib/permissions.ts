@@ -1,11 +1,11 @@
 export type Password = 'chinatown' | 'disco';
 
-export const PAGES = ['weekend', 'wedding', 'afterparty', 'guestbook'] as const;
+export const PAGES = ['weekend', 'wedding', 'guestbook'] as const;
 export type Page = typeof PAGES[number];
 
 const ACCESS: Record<Password, Page[]> = {
-  disco:     ['weekend', 'wedding', 'afterparty', 'guestbook'],
-  chinatown: ['wedding', 'afterparty', 'guestbook'],
+  disco:     ['weekend', 'wedding', 'guestbook'],
+  chinatown: ['wedding', 'guestbook'],
 };
 
 export const COOKIE_NAME = 'wedding_access';
