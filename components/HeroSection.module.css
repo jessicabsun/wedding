@@ -167,7 +167,7 @@
   color: var(--neon-yellow);
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
   font-weight: 400;
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   letter-spacing: 0.2em;
   text-align: center;
   width: clamp(9rem, 18vw, 14rem);
