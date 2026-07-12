@@ -46,7 +46,7 @@ export async function lookupGuests(query: string, lastNameQuery?: string): Promi
   const sheets = getSheets();
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: SPREADSHEET_ID,
-    range: "Guests!A2:G",
+    range: "Guests!A2:E",
   });
 
   const rows = res.data.values;
@@ -62,14 +62,12 @@ export async function lookupGuests(query: string, lastNameQuery?: string): Promi
     const name = (rows[i][0] || "").trim();
     const partner = (rows[i][1] || "").trim();
     const friday = (rows[i][2] || "").trim().toLowerCase();
-    const dinner = (rows[i][3] || "").trim().toLowerCase();
-    const dancing = (rows[i][4] || "").trim().toLowerCase();
-    const nicknames = (rows[i][5] || "").split(",").map((n: string) => n.trim().toLowerCase());
-    const extraGuests = (rows[i][6] || "").split(",").map((n: string) => n.trim()).filter(Boolean);
+    const nicknames = (rows[i][3] || "").split(",").map((n: string) => n.trim().toLowerCase());
+    const extraGuests = (rows[i][4] || "").split(",").map((n: string) => n.trim()).filter(Boolean);
+    // Columns F (Invite sent?) and G (Category) are internal tracking only
+    // and are intentionally not read here.
     const events: string[] = [];
     if (friday === "x") events.push("friday");
-    if (dinner === "x") events.push("dinner");
-    if (dancing === "x") events.push("dancing");
 
     const nameLower = name.toLowerCase();
     const firstName = nameLower.split(" ")[0];
