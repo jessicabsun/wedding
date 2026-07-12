@@ -30,7 +30,7 @@ export default function StaysSection() {
       </div>
       <div className={styles.items}>
         <span className={styles.item}>evelynsales@triumphotels.com</span>
-        <span className={styles.item}>855-468-3501</span>
+        <span className={styles.item}>855.468.3501</span>
       </div>
 
       <div className={styles.group}>
@@ -47,6 +47,11 @@ export default function StaysSection() {
       <div className={`${styles.items} ${styles.bookRow}`}>
         <span className={styles.item}>Book by September 17</span>
         <a href="https://reservations.acehotel.com/?adult=1&arrive=2026-10-16&chain=7231&child=0&currency=USD&depart=2026-10-18&dest=ACE&group=IHO2610HUS&hotel=22033&level=hotel&locale=en-US&productcurrency=USD&rooms=1" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
+      </div>
+      <div className={styles.items}>
+        <span className={styles.item}>Lori Nunez</span>
+        <span className={styles.item}>lnunez@acehotelnyc.com</span>
+        <span className={styles.item}>646.214.5783</span>
       </div>
 
       <div className={`${styles.group} ${styles.groupWide}`}>
@@ -67,7 +72,7 @@ export default function StaysSection() {
       <div className={styles.items}>
         <span className={styles.item}>Linet Perez</span>
         <span className={styles.item}>lperez@riwtc.com</span>
-        <span className={styles.item}>347-586-8723</span>
+        <span className={styles.item}>347.586.8723</span>
       </div>
     </section>
   );
