@@ -29,7 +29,7 @@ export default function RegistrySection() {
             rel="noopener noreferrer"
             className={styles.button}
           >
-            Contribute here
+            Contribute
           </a>
         </section>
         <div className={styles.photoWrap}>
