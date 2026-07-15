@@ -26,7 +26,7 @@ export default function StaysSection() {
       </div>
       <div className={`${styles.items} ${styles.bookRow}`}>
         <span className={styles.item}>Book by September 15</span>
-        <a href="https://be.synxis.com/?Hotel=20986&Chain=16087&group=2610JJB&arrive=2026-10-15&nights=4" className={styles.bookLink}>Click here to book</a>
+        <a href="https://be.synxis.com/?Hotel=20986&Chain=16087&group=2610JJB&arrive=2026-10-15&nights=4" target="_blank" rel="noopener noreferrer" className={styles.bookLink}>Click here to book</a>
       </div>
       <div className={styles.items}>
         <span className={styles.item}>evelynsales@triumphotels.com</span>
