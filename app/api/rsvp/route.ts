@@ -12,7 +12,7 @@ function buildRsvpSummary(responses: Record<string, string>) {
     "",
     `Friday: ${responses.fridayGuest1 || "—"}${responses.fridayGuest2 ? ` / ${responses.fridayGuest2}` : ""}`,
     `Dinner: ${responses.dinnerGuest1 || "—"}${responses.dinnerGuest2 ? ` / ${responses.dinnerGuest2}` : ""}`,
-    `Dancing: ${responses.dancingGuest1 || "—"}${responses.dancingGuest2 ? ` / ${responses.dancingGuest2}` : ""}`,
+    `Dessert & Dancing: ${responses.dancingGuest1 || "—"}${responses.dancingGuest2 ? ` / ${responses.dancingGuest2}` : ""}`,
   ];
 
   if (extraKeys.length) {

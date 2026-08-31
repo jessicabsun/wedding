@@ -319,7 +319,7 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
           </div>
 
           <div className={styles.eventBlock}>
-            <h3 className={styles.eventLabel}>Dancing</h3>
+            <h3 className={styles.eventLabel}>Dessert &amp; Dancing</h3>
             <RsvpRow
               label={guest.name}
               value={dancingG1}
@@ -427,7 +427,7 @@ export default function RsvpSection({ includeFriday: pageIncludesFriday }: { inc
               {extras.map((ex) => `, ${ex} ${extraChoices[`dinner-${ex}`] || ""}`)}
             </p>
             <p className={styles.confirmLine}>
-              Dancing: {guest.name} {dancingG1}
+              Dessert &amp; Dancing: {guest.name} {dancingG1}
               {hasPartner ? `, ${partnerDisplay} ${dancingG2}` : ""}
               {extras.map((ex) => `, ${ex} ${extraChoices[`dancing-${ex}`] || ""}`)}
             </p>
