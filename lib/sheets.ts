@@ -69,17 +69,27 @@ export async function lookupGuests(query: string, lastNameQuery?: string): Promi
     const events: string[] = [];
     if (friday === "x") events.push("friday");
 
+    const queryTokens = fullQuery.split(/\s+/).filter(Boolean);
+
     const nameLower = name.toLowerCase();
-    const firstName = nameLower.split(" ")[0];
+    const nameTokens = nameLower.split(/\s+/).filter(Boolean);
+    const firstName = nameTokens[0] || "";
+    const lastName = nameTokens[nameTokens.length - 1] || "";
     const partnerLower = partner.toLowerCase();
-    const partnerFirst = partnerLower.split(" ")[0];
+    const partnerTokens = partnerLower.split(/\s+/).filter(Boolean);
+    const partnerFirst = partnerTokens[0] || "";
+    const partnerLast = partnerTokens[partnerTokens.length - 1] || "";
+
+    const nicknameMatch = nicknames.includes(q) || nicknames.includes(fullQuery) ||
+      queryTokens.some((t) => nicknames.includes(t));
 
     const nameMatch =
       nameLower === fullQuery ||
       nameLower === q ||
       firstName === q ||
-      nicknames.includes(q) ||
-      nicknames.includes(fullQuery);
+      (lastName && lastName === q) ||
+      (lastName && queryTokens.includes(lastName)) ||
+      nicknameMatch;
 
     const partnerMatch =
       partner &&
@@ -87,7 +97,9 @@ export async function lookupGuests(query: string, lastNameQuery?: string): Promi
       (partnerLower === fullQuery ||
         partnerLower === q ||
         partnerFirst === q ||
-        nicknames.includes(q));
+        (partnerLast && partnerLast === q) ||
+        (partnerLast && queryTokens.includes(partnerLast)) ||
+        nicknameMatch);
 
     if (nameMatch || partnerMatch) {
       matches.push({ row: i + 2, name, partner, events, extraGuests });
